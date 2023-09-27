@@ -7,3 +7,10 @@
     opacity: 0.6;
     cursor: not-allowed;
 }
+body{
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+
+.textColor{
+    color: rgb(128, 128, 128);
+}

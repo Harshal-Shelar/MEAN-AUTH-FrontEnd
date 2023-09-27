@@ -1,5 +1,5 @@
-<div class="lg:w-3/12 mt-10 mb-10 p-10 shadow-2xl mx-auto">
-    <h3 class="text-3xl text-center font-semibold py-5">Register</h3>
+<div class="lg:w-3/12 mt-10 mb-20 p-10 shadow-2xl mx-auto bg-black rounded-xl">
+    <h3 class="text-3xl text-center font-semibold py-5 text-white">Register</h3>
     <form class="flex flex-col" [formGroup]="registerForm">
         <div class="flex flex-col mt-4 mb-1">
             <input type="text" formControlName="firstName" class="p-2 border border-gray-300 rounded" placeholder="First Name">
@@ -30,6 +30,6 @@
         <button (click)="regiter()" [disabled]="registerForm.invalid" [class.disabled]="registerForm.invalid" class="bg-indigo-500 p-2 mt-3 rounded text-white">Submit</button>
     </form>
     <div class="flex justify-center mt-4">
-        <span>Already have account ?</span><a class="text-indigo-600 ml-2 cursor-pointer" routerLink="/login">Login Here</a>
+        <span class="text-white">Already have account ?</span><a class="text-indigo-600 ml-2 cursor-pointer" routerLink="/login">Login Here</a>
     </div>
 </div>
