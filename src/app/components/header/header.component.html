@@ -1,24 +1,30 @@
-<nav class="w-full flex justify-between items-center p-5 bg-black shadow-2xl">
-    <div class="logo">
-        <span class="text-gray-200 text-4xl flex justify-start items-center">BookMyBook</span>
-    </div>
-    <div class="search relative" *ngIf="isLoggedIn">
-        <span class="absolute mt-1.5 mx-3">
-            <i class="fa fa-search" aria-hidden="true"></i>
-        </span>
-        <input type="text" placeholder="Search Book" class="w-96 p-2 pl-9 rounded rounded-r-none text-gray-600">
-        <button class="bg-slate-400 p-2 text-white outline-none outline-0">Search</button>
-    </div>
-    <div class="nav-items">
-        <ng-container *ngIf="!isLoggedIn">
-            <span class="m-3 text-xl cursor-pointer text-gray-200 font-bold hover:underline hover:text-indigo-200" routerLink="login">Login</span>
-            <span class="m-3 text-xl cursor-pointer text-gray-200 font-bold hover:underline hover:text-indigo-200" routerLink="register">Register</span>
-        </ng-container>
+<nav class="navbar navbar-inverse bg-black">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a routerLink="home"><span class="navbar-brand text-white">BookMYBook</span></a>
+        </div>
+        <div class="search relative" *ngIf="isLoggedIn">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <button type="submit" class="btn btn-default bg-transparent text-white border border-light">Submit</button>
+            </div>
+        </div>
+        <div class="nav navbar-right d-flex">
+            <ng-container *ngIf="!isLoggedIn">
+                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
+                    routerLink="login" *ngIf="regLog" (click)="regLog = false"><i class="fa fa-sign-in" aria-hidden="true"></i>  Login</span>
+                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
+                    routerLink="register" *ngIf="!regLog" (click)="regLog = true">Register</span>
+            </ng-container>
 
-        <ng-container *ngIf="isLoggedIn">
-            <span class="m-3 text-xl cursor-pointer text-gray-200 font-bold hover:underline hover:text-indigo-200" routerLink="cart">Cart</span>
-            <span class="m-3 text-xl cursor-pointer text-gray-200 font-bold hover:underline hover:text-indigo-200" routerLink="home">Welcome User</span>
-            <span class="m-3 text-xl cursor-pointer text-gray-200 font-bold hover:underline hover:text-indigo-200" (click)="logout()">Logout</span>
-        </ng-container>
+            <ng-container *ngIf="isLoggedIn">
+                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
+                    routerLink="cart"><i class="fa fa-shopping-cart"></i> Cart</span>
+                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
+                    routerLink="home">Welcome User</span>
+                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
+                    (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</span>
+            </ng-container>
+        </div>
     </div>
 </nav>
