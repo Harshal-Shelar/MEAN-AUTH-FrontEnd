@@ -1,30 +1,22 @@
-<nav class="navbar navbar-inverse bg-black">
+<nav class="navbar navbar-inverse bg-black" *ngIf="isLoggedIn">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a routerLink="home"><span class="navbar-brand text-white">BookMYBook</span></a>
+            <a routerLink="home"><span class="headerText">BookMYBook</span></a>
         </div>
         <div class="search relative" *ngIf="isLoggedIn">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search">
-                <button type="submit" class="btn btn-default bg-transparent text-white border border-light">Submit</button>
+                <button type="submit"
+                    class="btn btn-default bg-transparent text-white border border-light">Submit</button>
             </div>
         </div>
         <div class="nav navbar-right d-flex">
-            <ng-container *ngIf="!isLoggedIn">
-                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
-                    routerLink="login" *ngIf="regLog" (click)="regLog = false"><i class="fa fa-sign-in" aria-hidden="true"></i>  Login</span>
-                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
-                    routerLink="register" *ngIf="!regLog" (click)="regLog = true">Register</span>
-            </ng-container>
-
-            <ng-container *ngIf="isLoggedIn">
-                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
-                    routerLink="cart"><i class="fa fa-shopping-cart"></i> Cart</span>
-                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
-                    routerLink="home">Welcome User</span>
-                <span class="m-3 text-xl cursor-pointer text-gray-200 hover:underline hover:text-indigo-200"
-                    (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</span>
-            </ng-container>
+            <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
+                routerLink="cart"><i class="fa fa-shopping-cart"></i> Cart</span>
+            <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
+                routerLink="profile">Welcome User</span>
+            <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
+                (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</span>
         </div>
     </div>
 </nav>

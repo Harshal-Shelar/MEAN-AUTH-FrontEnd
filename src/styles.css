@@ -8,9 +8,39 @@
     cursor: not-allowed;
 }
 body{
-    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    background: linear-gradient(to right, rgb(73, 24, 138), rgb(1, 175, 255))
+    /* background: linear-gradient(to right, rgb(53, 53, 53), rgb(167, 167, 167)) */
 }
 
 .textColor{
     color: rgb(128, 128, 128);
+}
+
+.headerText{
+    color: rgba(37, 117, 252, 1);
+    font-family:cursive;
+    font-size: 35px !important;
+}
+
+.headerRightText{
+    color: rgba(37, 117, 252, 1);
+}
+
+.blockBack{
+    background: linear-gradient(to right, rgb(73, 24, 138), rgb(1, 175, 255))
+}
+
+.loginBlock{
+    transform: translate(-50%, -50%);
+    border: 1px solid white;
+    top: 50%;
+    left: 50%;
+    position:absolute;
+}
+
+@media (max-width : 767px) {
+    .loginBlock{
+        width: 90%;
+        padding: 20px 15px;
+    }
 }

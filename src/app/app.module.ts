@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { CartComponent } from './pages/cart/cart.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AuthService } from './services/auth.service';
     ForgetPasswordComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
