@@ -10,6 +10,8 @@ export class AuthService {
 
   baseUrl = environment.registerApi;
   isLoggedIn$ = new BehaviorSubject<boolean>(false);
+  isLoggedInn : any;
+
   constructor(private http : HttpClient) { }
 
   registerService(data:any){
@@ -30,5 +32,14 @@ export class AuthService {
 
   isLoggedIn(){
     return !!localStorage.getItem("user_id");
+  }
+
+  isAuthenticated() {
+    if(localStorage.getItem('user_id')){
+      this.isLoggedInn = true;
+    }else{
+      this.isLoggedInn = false;
+    }
+    return this.isLoggedInn;
   }
 }

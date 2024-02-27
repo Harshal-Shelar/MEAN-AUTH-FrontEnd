@@ -15,6 +15,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserAddComponent } from './components/user-add/user-add.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserListComponent,
+    UserAddComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
