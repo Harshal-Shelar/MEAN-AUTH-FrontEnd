@@ -1,0 +1,79 @@
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;
+
+    .popup {
+        margin: 2rem auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        width: fit-content;
+        position: relative;
+        transition: all 5s ease-in-out;
+        z-index: 999;
+        text-align: -webkit-center;
+
+        .content {
+            max-height: fit-content;
+            width: fit-content;
+            overflow: auto;
+
+            h4 {
+                margin-top: 1rem;
+                color: #333;
+                text-align: center;
+                font-size: 20px;
+
+                span {
+                    font-size: 20px;
+                    font-weight: 500;
+                    position: relative;
+                    color: red;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    text-align: center;
+                    margin-bottom: 2rem;
+                    text-wrap: nowrap;
+                }
+            }
+            .popupBtns {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 2rem;
+
+                .popupDelete, .popupCancel{
+                    height: 3rem;
+                    width: 7rem;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+                .popupCancel{
+                    background-color: gray;
+                    color: black;
+                }
+
+                .popupDelete{
+                    background-color: red;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : 580px) {
+    .overlay {
+        .popup {
+            width: 90%;
+        }
+    }
+}

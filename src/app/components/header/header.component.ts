@@ -5,18 +5,21 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
   isLoggedIn : boolean = false;
   regLog : any = false;
+  userDetails : any;
+
   constructor(private authService : AuthService, private router : Router) { }
 
   ngOnInit(): void {
     this.authService.isLoggedIn$.subscribe(res => {
       this.isLoggedIn = this.authService.isLoggedIn();
     })
+    this.userDetails = JSON.parse(localStorage.getItem('user_id') || '{}').firstName;
   }
 
   logout(){

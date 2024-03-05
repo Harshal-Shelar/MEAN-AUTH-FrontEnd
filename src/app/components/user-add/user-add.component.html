@@ -1,1 +1,14 @@
-<p>user-add works!</p>
+<div class="mainAddForm">
+    <h2>Add User</h2>
+    <form [formGroup]="userForm">
+        <input type="text" placeholder="Enter Name" formControlName="name">
+
+        <input type="email" placeholder="Enter Email" formControlName="email">
+
+        <input type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
+
+        <input type="text" placeholder="Enter Address" formControlName="address">
+
+        <button (click)="submitForm()">Submit</button>
+    </form>
+</div>

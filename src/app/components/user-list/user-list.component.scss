@@ -1,0 +1,138 @@
+.userListMain{
+    width: 1000px;
+    margin: 0 auto;
+
+    h2{
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: center;
+        color: rgba(37, 117, 252, 1);
+        margin-top: 1rem;
+    }
+
+    .inputSearch{
+        height: 3rem;
+        border: 1px solid rgb(118, 118, 118);
+        width: 97%;
+        padding-left: 1rem;
+        border-radius: 25px;
+        margin: 1rem 0;
+        font-size: 18px;
+    }
+    .inputSearch:focus{
+        outline: none;
+        transition: 0.5s;
+        border: 1px solid rgb(255, 255, 255);
+        box-shadow: 0px 0px 15px 3px rgb(134, 134, 134);
+    }
+
+    .cardMain{
+        display: inline-grid;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px 3px rgb(105, 105, 105);
+        width: 300px;
+        margin: 1rem;
+        padding: 1rem;
+        height: 300px;
+        background-color: rgb(2, 9, 31);
+        align-items: center;
+
+        h2{
+            text-align: center;
+            font-size: 25px;
+            color: white;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(37, 117, 252, 1);
+            padding-bottom: 1rem;
+        }
+
+        h3{
+            text-align: left;
+            margin: 0.6rem;
+            color: rgba(37, 117, 252, 1);
+            align-items: center;
+            letter-spacing: 1px;
+            font-size: 16px;
+
+            i{
+                font-size: 20px;
+                color: rgb(255, 204, 0);
+            }
+        }
+
+        .actionBtns{
+            display: flex;
+            gap: 1rem;
+
+            .deleteBtn, .editBtn{
+                background-color: transparent;
+                color: white;
+                font-size: 18px;
+                padding: 0.2rem;
+                letter-spacing: 1px;
+                width: 100%;
+            }
+            .deleteBtn:hover{
+                background-color: transparent;
+                text-shadow: 5px 1px 30px red;
+                transition: 0.5s;
+                color: red;
+            }
+
+            .editBtn:hover{
+                background-color: transparent;
+                text-shadow: 5px 1px 30px green;
+                transition: 0.5s;
+                color: green;
+            }
+        }
+
+        
+    }
+    .cardMain:hover{
+        background-color: rgb(0, 0, 0);
+        box-shadow: none;
+        transition: 0.8s;
+        
+    }
+}
+
+@media (max-width : 1000px) {
+    .userListMain{
+        width: 100%;
+        text-align: center;
+        
+        .cardMain{
+            margin: 0.5rem;
+        }
+    }
+}
+
+@media (max-width : 631px) {
+    .userListMain{
+        text-align: center;
+        .cardMain{
+            width: 254px;
+
+            h2{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width : 630px) {
+    .userListMain{
+        .cardMain{
+            width: 95%;
+
+            h2{
+                font-size: 25px;
+            }
+            h3{
+                font-size: 20px;
+            }
+        }
+    }
+}

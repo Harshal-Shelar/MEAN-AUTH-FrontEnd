@@ -1,0 +1,24 @@
+@media (max-width : 699px) {
+    .headerRightText{
+        display: none;
+        visibility: hidden;
+    }
+    .headerIcons{
+        font-size: 35px;
+
+        .addIcon{
+            margin-right: 2rem;
+            color: rgba(37, 117, 252, 1);
+        }
+        .fa-sign-out{
+            color: rgba(37, 117, 252, 1);
+        }
+    }
+}
+
+@media (min-width : 700px) {
+    .headerIcons{
+        display: none;
+        visibility: hidden;
+    }
+}

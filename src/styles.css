@@ -3,43 +3,49 @@
 @tailwind components;
 @tailwind utilities;
 
-.disabled{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
-body{
-    background: linear-gradient(to right, rgb(73, 24, 138), rgb(1, 175, 255))
-    /* background: linear-gradient(to right, rgb(53, 53, 53), rgb(167, 167, 167)) */
-}
 
-.textColor{
+.textColor {
     color: rgb(128, 128, 128);
 }
 
-.headerText{
+.headerText {
     color: rgba(37, 117, 252, 1);
-    font-family:cursive;
+    font-family: cursive;
     font-size: 35px !important;
+    text-shadow: 1px 1px 15px rgba(37, 117, 252, 1);
 }
 
-.headerRightText{
+.headerRightText {
     color: rgba(37, 117, 252, 1);
 }
 
-.blockBack{
+.blockBack {
     background: linear-gradient(to right, rgb(73, 24, 138), rgb(1, 175, 255))
 }
 
-.loginBlock{
+.loginBlock {
     transform: translate(-50%, -50%);
     border: 1px solid white;
     top: 50%;
     left: 50%;
-    position:absolute;
+    position: absolute;
 }
 
 @media (max-width : 767px) {
-    .loginBlock{
+    .loginBlock {
         width: 90%;
         padding: 20px 15px;
     }

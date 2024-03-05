@@ -1,0 +1,125 @@
+.mainAddForm {
+    margin: 1rem auto;
+    width: 500px;
+    padding: 2rem;
+    border-radius: 20px;
+    background-color: rgb(2, 9, 31);
+    box-shadow: 7px 7px 15px 1px rgb(64, 64, 64);
+
+    h2 {
+        text-align: center;
+        font-size: 40px;
+        color: rgba(37, 117, 252, 1);
+        letter-spacing: 2px;
+    }
+
+    form {
+        display: grid;
+        width: 100%;
+
+        input {
+            outline: none;
+            border-bottom: 2px solid rgba(37, 117, 252, 1);
+            background-color: transparent;
+            color: white;
+            font-size: 18px;
+            margin: 2.2rem 0 0.5rem;
+            padding: 0 0 0.2rem 0.4rem;
+            width: 100%;
+            letter-spacing: 1.5px;
+        }
+
+        .actionBtns {
+            display: flex;
+            gap: 1rem;
+
+            .updateCan {
+                background-color: gray;
+                font-size: 18px;
+                padding: 0.5rem;
+                margin-top: 2rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                width: 100%;
+                color: black;
+            }
+
+            .updateCan:hover {
+                background-color: black;
+                transition: 0.5s;
+                color: gray;
+                box-shadow: 0px 0px 10px 2px gray;
+            }
+
+            .updateDel {
+                background-color: red;
+                font-size: 18px;
+                padding: 0.5rem;
+                margin-top: 2rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                width: 100%;
+                color: white;
+            }
+
+            .updateDel:hover {
+                background-color: black;
+                transition: 0.5s;
+                color: red;
+                box-shadow: 0px 0px 10px 2px red;
+            }
+
+            .updateBtn {
+                background-color: rgba(37, 117, 252, 1);
+                font-size: 18px;
+                padding: 0.5rem;
+                margin-top: 2rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                width: 100%;
+                color: black;
+            }
+
+            .updateBtn:hover {
+                background-color: black;
+                transition: 0.5s;
+                color: rgba(37, 117, 252, 1);
+                box-shadow: 0px 0px 10px 2px rgba(37, 117, 252, 1);
+            }
+        }
+    }
+}
+
+@media (max-width : 600px) {
+    .mainAddForm {
+        width: 90%;
+
+        form {
+            input {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media (max-width :500px) {
+    .mainAddForm {
+        form {
+            .actionBtns {
+                display: grid;
+
+                .updateDel,
+                .updateBtn {
+                    margin: 0;
+                }
+
+                .updateCan,
+                .updateDel,
+                .updateBtn {
+                    padding: 0.7rem;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}

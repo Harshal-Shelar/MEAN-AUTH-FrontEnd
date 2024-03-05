@@ -11,6 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm !: FormGroup;
+  hideLogin : any = true;
+  
   constructor(private formBuilder: FormBuilder, 
     private authService : AuthService,
     private router : Router) { }
@@ -19,19 +21,27 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email : ['', [Validators.required, Validators.email]],
       password : ['', Validators.required],
-    })
+    });
+
+    if(localStorage.getItem('user_id')){
+      this.hideLogin = false;
+    }
   }
 
   login(){
     this.authService.loginService(this.loginForm.value).subscribe({
       next : (res)=>{
-        alert("Login Successfull");
-        localStorage.setItem("user_id", res.data._id);
+        
+        localStorage.setItem("user_id", JSON.stringify(res.data));
         this.loginForm.reset();
         this.authService.isLoggedIn$.next(true);
-        this.router.navigateByUrl('/home')
+        this.router.navigateByUrl('/listUser')
+        .then(()=>{
+          window.location.reload();
+        })
       },
       error:(err)=>{
+        alert("Wrong Login Credentials");
         console.log(err);
       }
     })

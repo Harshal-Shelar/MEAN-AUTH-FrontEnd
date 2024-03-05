@@ -1,22 +1,20 @@
-<nav class="navbar navbar-inverse bg-black" *ngIf="isLoggedIn">
+<nav class="navbar navbar-inverse" style="background-color: rgb(2, 9, 31);" *ngIf="isLoggedIn">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a routerLink="home"><span class="headerText">BookMYBook</span></a>
-        </div>
-        <div class="search relative" *ngIf="isLoggedIn">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <button type="submit"
-                    class="btn btn-default bg-transparent text-white border border-light">Submit</button>
-            </div>
+            <a routerLink="listUser"><span class="headerText">MEAN CRUD</span></a>
         </div>
         <div class="nav navbar-right d-flex">
             <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
-                routerLink="cart"><i class="fa fa-shopping-cart"></i> Cart</span>
+                routerLink="listUser">List of All Users</span>
             <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
-                routerLink="profile">Welcome User</span>
+                routerLink="addUser">Add User</span>
             <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
-                (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</span>
+                (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout ({{userDetails}})</span>
+        </div>
+
+        <div class="headerIcons">
+            <i class="fa fa-plus addIcon" routerLink="addUser"></i>
+            <i class="fa fa-sign-out" (click)="logout()"></i>
         </div>
     </div>
 </nav>
