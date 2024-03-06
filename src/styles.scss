@@ -48,7 +48,7 @@
                 display: flex;
                 justify-content: center;
                 gap: 1rem;
-                margin-top: 2rem;
+                margin: 2rem 0 0.5rem;
 
                 .popupDelete, .popupCancel{
                     height: 3rem;
@@ -59,12 +59,24 @@
                 }
                 .popupCancel{
                     background-color: gray;
-                    color: black;
+                    color: rgb(255, 255, 255);
+                }
+                .popupCancel:hover{
+                    background-color: transparent;
+                    color: gray;
+                    box-shadow: 0px 0px 10px 2px gray;
+                    transition: 0.5s;
                 }
 
                 .popupDelete{
                     background-color: red;
                     color: white;
+                }
+                .popupDelete:hover{
+                    background-color: transparent;
+                    color: red;
+                    box-shadow: 0px 0px 10px 2px red;
+                    transition: 0.5s;
                 }
             }
         }
