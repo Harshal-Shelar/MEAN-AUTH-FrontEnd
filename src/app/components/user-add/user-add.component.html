@@ -43,6 +43,9 @@
         <div class="valErr" *ngIf="hasError('empId','required') && formInvalid">Employee Id is required
         </div>
 
-        <button (click)="submitForm()">Submit</button>
+        <div class="addActionBtn">
+            <button class="cancelBtn" routerLink="/listUser">Cancel</button>
+            <button class="submitBtn" (click)="submitForm()">Submit</button>
+        </div>
     </form>
 </div>
