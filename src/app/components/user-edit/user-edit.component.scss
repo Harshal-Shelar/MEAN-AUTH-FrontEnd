@@ -1,5 +1,5 @@
 .mainAddForm {
-    margin: 1rem auto;
+    margin: 7rem auto 2rem;
     width: 500px;
     padding: 2rem;
     border-radius: 20px;
@@ -17,16 +17,30 @@
         display: grid;
         width: 100%;
 
-        input {
-            outline: none;
-            border-bottom: 2px solid rgba(37, 117, 252, 1);
-            background-color: transparent;
-            color: white;
-            font-size: 18px;
-            margin: 2.2rem 0 0.5rem;
-            padding: 0 0 0.2rem 0.4rem;
-            width: 100%;
-            letter-spacing: 1.5px;
+        .inputGroup{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            i{
+                margin-bottom: -1.5rem;
+                font-size: 20px;
+                color: rgb(255, 204, 0);
+                width: 7%;
+                text-align: center;
+            }
+            
+            input{
+                outline: none;
+                border-bottom: 2px solid rgba(37, 117, 252, 1);
+                background-color: transparent;
+                color: white;
+                font-size: 18px;
+                margin: 2.2rem 0 0.5rem;
+                padding:0 0 0.2rem 0.4rem;
+                width: 100%;
+                letter-spacing: 1px;
+            }
         }
 
         .actionBtns {

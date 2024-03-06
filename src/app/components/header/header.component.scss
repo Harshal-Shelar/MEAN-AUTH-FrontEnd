@@ -1,23 +1,94 @@
-@media (max-width : 699px) {
-    .headerRightText{
-        display: none;
-        visibility: hidden;
-    }
-    .headerIcons{
-        font-size: 35px;
+.mainHeader {
+    background-color: rgb(2, 9, 31);
+    width: 100%;
+    top: 0;
+    position: fixed;
+    box-shadow: 5px 5px 10px 2px gray;
+    z-index: 999;
+    opacity: 1;
 
-        .addIcon{
-            margin-right: 2rem;
-            color: rgba(37, 117, 252, 1);
+    .innerHeader {
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+        align-items: center;
+
+        .logo {
+            .logoName {
+                color: rgba(37, 117, 252, 1);
+                font-family: cursive;
+                font-size: 35px !important;
+                text-shadow: 1px 1px 15px rgba(37, 117, 252, 1);
+                cursor: pointer;
+            }
         }
-        .fa-sign-out{
-            color: rgba(37, 117, 252, 1);
+
+        .headerTitles {
+            letter-spacing: 1.5px;
+
+            span {
+                font-size: 20px;
+                cursor: pointer;
+                color: rgba(37, 117, 252, 1);
+                margin: 0 1.5rem 0 0;
+                font-weight: 500;
+            }
+
+            span:hover {
+                transition: 0.5s;
+                text-shadow: 1px 1px 15px rgba(37, 117, 252, 1);
+            }
+
+            span:focus {
+                transition: 0.5s;
+                color: rgb(255, 204, 0);
+            }
         }
     }
 }
 
-@media (min-width : 700px) {
-    .headerIcons{
+.headerOpacity {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+@media (max-width : 600px) {
+    .mainHeader {
+
+        .innerHeader{
+            .headerIcons {
+                i{
+                    font-size: 35px;
+                    color: rgb(255, 204, 0);
+                }
+                .addIcon{
+                    margin-right: 2rem;
+                }
+            }
+        }
+
+        .innerHeader {
+
+            .headerTitles{
+                display: none;
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+@media (max-width : 971px) {
+    .mainHeader {
+        .innerHeader {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width : 601px) {
+    .headerIcons {
         display: none;
         visibility: hidden;
     }

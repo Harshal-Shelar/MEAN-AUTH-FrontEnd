@@ -1,13 +1,35 @@
 <div class="mainAddForm">
-    <h2>Update User</h2>
+    <h2>User Details</h2>
     <form [formGroup]="updateUserForm">
-        <input type="text" placeholder="Enter Name" formControlName="name">
+        <div class="inputGroup">
+            <i class="fa fa-user-circle-o"></i>
+            <input type="text" placeholder="Enter Name" formControlName="name">
+        </div>
 
-        <input type="email" placeholder="Enter Email" formControlName="email">
+        <div class="inputGroup">
+            <i class="fa fa-envelope-o"></i>
+            <input type="email" placeholder="Enter Email" formControlName="email">
+        </div>
 
-        <input type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
+        <div class="inputGroup">
+            <i class="fa fa-phone"></i>
+            <input type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
+        </div>
 
-        <input type="text" placeholder="Enter Address" formControlName="address">
+        <div class="inputGroup">
+            <i class="fa fa-address-book-o"></i>
+            <input type="text" placeholder="Enter Address" formControlName="address">
+        </div>
+
+        <div class="inputGroup">
+            <i class="fa fa-money"></i>
+            <input type="number" placeholder="Enter Salary" formControlName="salary">
+        </div>
+
+        <div class="inputGroup">
+            <i class="fa fa-id-badge"></i>
+            <input type="text" placeholder="Enter Employee Id" formControlName="empId">
+        </div>
 
         <div class="actionBtns">
             <button class="updateCan" routerLink="/listUser">Cancel</button>
@@ -22,7 +44,7 @@
         <div class="content">
             <h4>You want to delete the record of <span> {{deleteUserName}}</span> ?</h4>
             <div class="popupBtns">
-                <button type="cancel" class="popupCancel" (click)="openPopup = false">Cancel</button>
+                <button type="cancel" class="popupCancel" (click)="closePopup()">Cancel</button>
                 <button type="button" class="popupDelete"
                     (click)="deleteUser()">Delete</button>
             </div>

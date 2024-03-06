@@ -1,20 +1,29 @@
-<nav class="navbar navbar-inverse" style="background-color: rgb(2, 9, 31);" *ngIf="isLoggedIn">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a routerLink="listUser"><span class="headerText">MEAN CRUD</span></a>
+<div class="mainHeader" [ngClass]=" dataRecieve ? 'headerOpacity' : ''">
+    <div class="innerHeader">
+        <div class="logo">
+            <span class="logoName" routerLink="/listUser">MEAN CRUD</span>
         </div>
-        <div class="nav navbar-right d-flex">
-            <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
-                routerLink="listUser">List of All Users</span>
-            <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
-                routerLink="addUser">Add User</span>
-            <span class="m-3 text-xl cursor-pointer headerRightText hover:underline hover:text-indigo-200"
-                (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout ({{userDetails}})</span>
+        <div class="headerTitles">
+            <span routerLink="/listUser">User List</span>
+            <span routerLink="/addUser">Add User</span>
+            <span (click)="logoutFun()"> <i class="fa fa-power-off"></i> {{userDetails}}</span>
         </div>
-
         <div class="headerIcons">
-            <i class="fa fa-plus addIcon" routerLink="addUser"></i>
-            <i class="fa fa-sign-out" (click)="logout()"></i>
+            <i class="fa fa-plus addIcon" routerLink="/addUser"></i>
+            <i class="fa fa-power-off" (click)="logoutFun()"></i>
         </div>
     </div>
-</nav>
+</div>
+
+<div class="overlay" *ngIf="openPopup">
+    <div class="popup">
+        <div class="content">
+            <h4>Do you really want to <span>Logout</span> from this device ?</h4>
+            <div class="popupBtns">
+                <button type="cancel" class="popupCancel" (click)="closePopup()">No</button>
+                <button type="button" class="popupDelete"
+                    (click)="logout()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

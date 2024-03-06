@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-user-list',
@@ -14,7 +15,7 @@ export class UserListComponent implements OnInit {
   selectedUser: any;
   deleteUserName : any;
 
-  constructor(private apiService : ApiService) { }
+  constructor(private apiService : ApiService, private sharedService : SharedService) { }
 
   ngOnInit(): void {
     this.getUserList()
@@ -38,7 +39,13 @@ export class UserListComponent implements OnInit {
   selectUser(user:any) {
     this.selectedUser = user;
     this.openPopup = true;
+    this.sharedService.setData(true);
     this.deleteUserName = user.name; 
+  }
+
+  closePopup(){
+    this.openPopup = false;
+    this.sharedService.setData(false);
   }
 
 }

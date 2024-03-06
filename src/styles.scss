@@ -8,9 +8,10 @@
     transition: opacity 500ms;
     visibility: visible;
     opacity: 1;
+    overflow: hidden;
 
     .popup {
-        margin: 2rem auto;
+        margin: 5rem auto 0;
         padding: 20px;
         background: #fff;
         border-radius: 15px;

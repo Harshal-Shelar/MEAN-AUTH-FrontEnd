@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-user-edit',
@@ -13,15 +14,16 @@ export class UserEditComponent implements OnInit {
   getUserId: any;
   updateUserForm !: FormGroup;
   deleteName: any;
-  openPopup : any;
+  openPopup: any;
   selectedUser: any;
-  deleteUserName : any;
+  deleteUserName: any;
 
   constructor(
     private route: ActivatedRoute,
-    private router : Router,
+    private router: Router,
     private apiService: ApiService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private sharedService: SharedService
   ) { }
 
   ngOnInit(): void {
@@ -30,9 +32,11 @@ export class UserEditComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]],
       phoneNumber: [null, Validators.required],
       address: [null, Validators.required],
+      salary: [null, Validators.required],
+      empId: [null, Validators.required],
       userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id
     });
-    
+
     this.getUserId = this.route.snapshot.params['id'];
     this.getUser();
   }
@@ -58,27 +62,33 @@ export class UserEditComponent implements OnInit {
         email: result.email,
         phoneNumber: result.phoneNumber,
         address: result.address,
-        userId : result.userId
+        salary: result.salary,
+        empId: result.empId,
+        userId: result.userId
       });
     });
 
   }
 
-  deleteUser(){
-    this.apiService.deleteUser(this.selectedUser).subscribe((data)=>{
-      if(data){
+  deleteUser() {
+    this.apiService.deleteUser(this.selectedUser).subscribe((data) => {
+      if (data) {
         this.openPopup = false;
         this.router.navigateByUrl('/listUser')
       }
     })
   }
 
-  selectUser(getUserId : any) {
+  selectUser(getUserId: any) {
     this.selectedUser = getUserId;
     this.openPopup = true;
-    this.deleteUserName = this.updateUserForm.value.name; 
-    console.log(this.deleteUserName);
-    
+    this.sharedService.setData(true);
+    this.deleteUserName = this.updateUserForm.value.name;
+  }
+
+  closePopup(){
+    this.openPopup = false;
+    this.sharedService.setData(false);
   }
 
 }

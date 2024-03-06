@@ -24,6 +24,8 @@ export class UserAddComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]],
       phoneNumber: [null, [Validators.required]],
       address: [null, [Validators.required]],
+      salary: [null, [Validators.required]],
+      empId: [null, [Validators.required]],
       userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id
     })
   }

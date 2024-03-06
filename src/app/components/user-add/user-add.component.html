@@ -1,13 +1,35 @@
 <div class="mainAddForm">
     <h2>Add User</h2>
     <form [formGroup]="userForm">
-        <input type="text" placeholder="Enter Name" formControlName="name">
+        <div class="inputGroup">
+            <i class="fa fa-user-circle-o"></i>
+            <input type="text" placeholder="Enter Name" formControlName="name">
+        </div>
 
-        <input type="email" placeholder="Enter Email" formControlName="email">
+        <div class="inputGroup">
+            <i class="fa fa-envelope-o"></i>
+            <input type="email" placeholder="Enter Email" formControlName="email">
+        </div>
 
-        <input type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
+        <div class="inputGroup">
+            <i class="fa fa-phone"></i>
+            <input type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
+        </div>
 
-        <input type="text" placeholder="Enter Address" formControlName="address">
+        <div class="inputGroup">
+            <i class="fa fa-address-book-o"></i>
+            <input type="text" placeholder="Enter Address" formControlName="address">
+        </div>
+
+        <div class="inputGroup">
+            <i class="fa fa-money"></i>
+            <input type="number" placeholder="Enter Salary" formControlName="salary">
+        </div>
+
+        <div class="inputGroup">
+            <i class="fa fa-id-badge"></i>
+            <input type="text" placeholder="Enter Employee Id" formControlName="empId">
+        </div>
 
         <button (click)="submitForm()">Submit</button>
     </form>
