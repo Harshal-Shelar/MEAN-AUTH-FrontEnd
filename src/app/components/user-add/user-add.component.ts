@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class UserAddComponent implements OnInit {
 
   userForm !: FormGroup;
+  formInvalid : any = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -39,7 +40,12 @@ export class UserAddComponent implements OnInit {
       this.router.navigateByUrl('/listUser');
       this.userForm.reset();
     } else {
+      this.formInvalid = true;
       console.log("Error While Submitting Form");
     }
+  }
+
+  hasError = (controlName: string, errorName: string) => {
+    return this.userForm.controls[controlName].hasError(errorName);
   }
 }

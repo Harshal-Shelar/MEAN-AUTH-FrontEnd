@@ -106,11 +106,16 @@
 
 @media (max-width : 600px) {
     .mainAddForm {
-        width: 90%;
+        width: 93%;
 
         form {
-            input {
-                font-size: 22px;
+            .inputGroup{
+                input {
+                    font-size: 20px;
+                }
+                i{
+                    font-size: 24px;
+                }
             }
         }
     }

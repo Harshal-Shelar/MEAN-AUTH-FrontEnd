@@ -20,7 +20,13 @@
 .textColor {
     color: rgb(128, 128, 128);
 }
-
+.valErr {
+    color: red;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 14%;
+    letter-spacing: 1px;
+}
 .headerText {
     color: rgba(37, 117, 252, 1);
     font-family: cursive;

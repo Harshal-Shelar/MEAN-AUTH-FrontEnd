@@ -17,6 +17,7 @@ export class UserEditComponent implements OnInit {
   openPopup: any;
   selectedUser: any;
   deleteUserName: any;
+  formInvalid : any = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -47,7 +48,7 @@ export class UserEditComponent implements OnInit {
         if (result) {
           this.router.navigateByUrl('/listUser')
         } else {
-          console.log("successfull");
+          this.formInvalid = true;
         }
       });
     }
@@ -67,7 +68,10 @@ export class UserEditComponent implements OnInit {
         userId: result.userId
       });
     });
+  }
 
+  hasError = (controlName: string, errorName: string) => {
+    return this.updateUserForm.controls[controlName].hasError(errorName);
   }
 
   deleteUser() {

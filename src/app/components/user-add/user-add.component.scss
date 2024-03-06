@@ -1,5 +1,5 @@
 .mainAddForm{
-    margin: 6rem auto 2rem;
+    margin: 7rem auto 2rem;
     width: 500px;
     padding: 2rem;
     border-radius: 20px;
@@ -66,8 +66,14 @@
         width: 93%;
 
         form{
-            input{
-                font-size: 22px;
+            .inputGroup{
+
+                input{
+                    font-size: 20px;
+                }
+                i{
+                    font-size: 24px;
+                }
             }
 
             button{

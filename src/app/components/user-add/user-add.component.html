@@ -5,30 +5,42 @@
             <i class="fa fa-user-circle-o"></i>
             <input type="text" placeholder="Enter Name" formControlName="name">
         </div>
+        <div class="valErr" *ngIf="hasError('name','required') && formInvalid">Full Name is required
+        </div>
 
         <div class="inputGroup">
             <i class="fa fa-envelope-o"></i>
             <input type="email" placeholder="Enter Email" formControlName="email">
+        </div>
+        <div class="valErr" *ngIf="hasError('email','required') && formInvalid">Email is required
         </div>
 
         <div class="inputGroup">
             <i class="fa fa-phone"></i>
             <input type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
         </div>
+        <div class="valErr" *ngIf="hasError('phoneNumber','required') && formInvalid">Phone Number is required
+        </div>
 
         <div class="inputGroup">
             <i class="fa fa-address-book-o"></i>
             <input type="text" placeholder="Enter Address" formControlName="address">
+        </div>
+        <div class="valErr" *ngIf="hasError('address','required') && formInvalid">Address is required
         </div>
 
         <div class="inputGroup">
             <i class="fa fa-money"></i>
             <input type="number" placeholder="Enter Salary" formControlName="salary">
         </div>
+        <div class="valErr" *ngIf="hasError('salary','required') && formInvalid">Salary is required
+        </div>
 
         <div class="inputGroup">
             <i class="fa fa-id-badge"></i>
             <input type="text" placeholder="Enter Employee Id" formControlName="empId">
+        </div>
+        <div class="valErr" *ngIf="hasError('empId','required') && formInvalid">Employee Id is required
         </div>
 
         <button (click)="submitForm()">Submit</button>
