@@ -35,7 +35,6 @@ export class UserListComponent implements OnInit {
       this.totalEmp = data.length;
 
       this.userList.map((item:any)=>{
-        this.duplicates;
         this.duplicates.push('All');
         this.duplicates.push(item.salary);
         
