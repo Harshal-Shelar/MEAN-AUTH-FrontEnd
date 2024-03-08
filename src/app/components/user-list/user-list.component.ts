@@ -9,43 +9,63 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class UserListComponent implements OnInit {
 
-  userList : any = [];
+  userList: any = [];
   searchText : any;
-  openPopup : any;
+  openPopup: any;
   selectedUser: any;
-  deleteUserName : any;
+  deleteUserName: any;
+  totalEmp: any;
+  dept : any = [];
 
-  constructor(private apiService : ApiService, private sharedService : SharedService) { }
+  constructor(private apiService: ApiService, private sharedService: SharedService) { }
 
   ngOnInit(): void {
-    this.getUserList()
+    this.getUserList();
   }
 
-  getUserList(){
-    this.apiService.getAllUsers().subscribe((data)=>{
+  getUserList() {
+    this.apiService.getAllUsers().subscribe((data) => {
       this.userList = data;
+      this.totalEmp = data.length;
     })
   }
 
-  deleteUser(){
-    this.apiService.deleteUser(this.selectedUser._id).subscribe((data)=>{
-      if(data){
+  deleteUser() {
+    this.apiService.deleteUser(this.selectedUser._id).subscribe((data) => {
+      if (data) {
         this.getUserList();
         this.openPopup = false;
       }
     })
   }
 
-  selectUser(user:any) {
+  selectUser(user: any) {
     this.selectedUser = user;
     this.openPopup = true;
     this.sharedService.setData(true);
-    this.deleteUserName = user.name; 
+    this.deleteUserName = user.name;
   }
 
-  closePopup(){
+  closePopup() {
     this.openPopup = false;
     this.sharedService.setData(false);
   }
 
+  onItemChange(value: any) {
+    this.dept = [];
+    if(value !== 'All'){
+      this.apiService.getAllUsers().subscribe((data) => {
+        data.map((item:any)=>{
+          
+          if(item.salary === value){
+            this.dept.push(item)
+            this.userList = this.dept;
+            this.totalEmp = this.userList.length;
+          }
+        })
+      })
+    }else{
+      this.getUserList()
+    }
+  }
 }

@@ -11,7 +11,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+body{
+    background-color: rgb(2, 9, 31);
+}
 .disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -44,10 +46,11 @@
 
 .loginBlock {
     transform: translate(-50%, -50%);
-    border: 1px solid white;
     top: 50%;
     left: 50%;
     position: absolute;
+    box-shadow: 0px 0px 10px 2px black;
+    background-color: transparent !important;
 }
 
 @media (max-width : 767px) {
