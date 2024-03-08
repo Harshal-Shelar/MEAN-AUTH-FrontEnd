@@ -4,7 +4,8 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Pridi:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Monoton&family=Satisfy&display=swap');
 
 * {
     margin: 0;
@@ -13,7 +14,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background-color: rgb(2, 9, 31);
+    background-color: #0e0f14;
 }
 .disabled {
     opacity: 0.6;

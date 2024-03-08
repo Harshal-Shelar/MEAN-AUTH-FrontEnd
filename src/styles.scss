@@ -13,7 +13,7 @@
     .popup {
         margin: 5rem auto 0;
         padding: 20px;
-        background: #fff;
+        background: #1e2036;
         border-radius: 15px;
         width: fit-content;
         position: relative;
@@ -28,7 +28,7 @@
 
             h4 {
                 margin-top: 1rem;
-                color: #333;
+                color: #ffffff;
                 text-align: center;
                 font-size: 20px;
 
@@ -59,7 +59,7 @@
                 }
                 .popupCancel{
                     background-color: gray;
-                    color: rgb(255, 255, 255);
+                    color: rgb(0, 0, 0);
                 }
                 .popupCancel:hover{
                     background-color: transparent;
