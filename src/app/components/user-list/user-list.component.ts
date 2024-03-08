@@ -31,7 +31,7 @@ export class UserListComponent implements OnInit {
 
   getUserList() {
     this.apiService.getAllUsers().subscribe((data) => {
-      this.userList = data;
+      this.userList = data.reverse();
       this.totalEmp = data.length;
 
       this.userList.map((item:any)=>{
