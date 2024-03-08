@@ -9,7 +9,6 @@ import { ResetComponent } from './pages/reset/reset.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

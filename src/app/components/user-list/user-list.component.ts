@@ -16,6 +16,12 @@ export class UserListComponent implements OnInit {
   deleteUserName: any;
   totalEmp: any;
   dept : any = [];
+  deptList : any = [];
+  count : number = 0;
+  page : number = 1;
+  tableSize : number = 6;
+  tableSizes : any = [6,12,18,24];
+  duplicates : any =  [];
 
   constructor(private apiService: ApiService, private sharedService: SharedService) { }
 
@@ -27,6 +33,14 @@ export class UserListComponent implements OnInit {
     this.apiService.getAllUsers().subscribe((data) => {
       this.userList = data;
       this.totalEmp = data.length;
+
+      this.userList.map((item:any)=>{
+        this.duplicates;
+        this.duplicates.push('All');
+        this.duplicates.push(item.salary);
+        
+        this.deptList = [...new Set(this.duplicates)];
+      })
     })
   }
 
@@ -37,6 +51,17 @@ export class UserListComponent implements OnInit {
         this.openPopup = false;
       }
     })
+  }
+
+  onTableDataChange(event:any){
+    this.page = event;
+    this.getUserList();
+  }
+
+  onTableSizeChange(event:any){
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getUserList();
   }
 
   selectUser(user: any) {

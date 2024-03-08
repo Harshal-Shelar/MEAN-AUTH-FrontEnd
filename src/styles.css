@@ -25,8 +25,8 @@ body{
 .valErr {
     color: red;
     font-weight: 500;
-    font-size: 18px;
-    margin-left: 14%;
+    font-size: 14px;
+    margin-left: 11%;
     letter-spacing: 1px;
 }
 .headerText {
@@ -52,7 +52,9 @@ body{
     box-shadow: 0px 0px 10px 2px black;
     background-color: transparent !important;
 }
-
+.ngx-pagination .current{
+    background-color: rgb(255, 204, 0) !important;
+}
 @media (max-width : 767px) {
     .loginBlock {
         width: 90%;
