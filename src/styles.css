@@ -53,7 +53,12 @@ body{
     background-color: transparent !important;
 }
 .ngx-pagination .current{
+    font-size: 20px;
     background-color: rgb(255, 204, 0) !important;
+}
+.ngx-pagination a{
+    font-size: 25px;
+    margin: 0 0.2rem;
 }
 @media (max-width : 767px) {
     .loginBlock {
