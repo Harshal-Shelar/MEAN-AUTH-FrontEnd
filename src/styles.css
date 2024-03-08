@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Pridi:wght@200;300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -53,16 +54,20 @@ body{
     background-color: transparent !important;
 }
 .ngx-pagination .current{
-    font-size: 20px;
     background-color: rgb(255, 204, 0) !important;
-}
-.ngx-pagination a{
-    font-size: 25px;
-    margin: 0 0.2rem;
 }
 @media (max-width : 767px) {
     .loginBlock {
         width: 90%;
         padding: 20px 15px;
+    }
+
+    .ngx-pagination .current{
+        font-size: 20px;
+        
+    }
+    .ngx-pagination a{
+        font-size: 25px;
+        margin: 0 0.2rem;
     }
 }

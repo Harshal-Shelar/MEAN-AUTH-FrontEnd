@@ -18,10 +18,13 @@
         .logo {
             .logoName {
                 color: rgba(37, 117, 252, 1);
-                font-family: cursive;
+                font-family: "Pridi", serif !important;
                 font-size: 35px !important;
-                text-shadow: 1px 1px 15px rgba(37, 117, 252, 1);
+                text-shadow: 1px 1px 7px rgba(37, 117, 252, 1);
                 cursor: pointer;
+                letter-spacing: 5px;
+                font-weight: 600;
+                font-style: normal;
             }
         }
 
@@ -35,7 +38,7 @@
                 margin: 0 1.5rem;
                 font-weight: 500;
 
-                .fa-power-off{
+                .fa-power-off {
                     color: red;
                 }
             }
@@ -61,13 +64,14 @@
 @media (max-width : 649px) {
     .mainHeader {
 
-        .innerHeader{
+        .innerHeader {
             .headerIcons {
-                i{
+                i {
                     font-size: 35px;
                     color: rgb(255, 204, 0);
                 }
-                .addIcon{
+
+                .addIcon {
                     margin-right: 2rem;
                 }
             }
@@ -75,7 +79,7 @@
 
         .innerHeader {
 
-            .headerTitles{
+            .headerTitles {
                 display: none;
                 visibility: hidden;
             }

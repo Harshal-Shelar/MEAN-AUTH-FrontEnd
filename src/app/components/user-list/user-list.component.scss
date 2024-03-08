@@ -5,10 +5,11 @@
     h2 {
         font-size: 60px;
         font-weight: bold;
-        letter-spacing: 2px;
+        letter-spacing: 4px;
         text-align: center;
         color: rgba(37, 117, 252, 1);
         margin-top: 1rem;
+        font-family: "Pridi", serif !important;
     }
 
     .inputSearch {
@@ -160,7 +161,6 @@
                 border-radius: 8px;
                 border: none;
                 height: 2.5rem;
-                font-size: 20px;
                 background-color: #eaeaea;
             }
         }
@@ -190,9 +190,10 @@
     .userListMain {
         text-align: center;
 
-        .inputSearch{
+        .inputSearch {
             width: 90%;
         }
+
         .cardMain {
             width: 254px;
 
@@ -257,18 +258,20 @@
                     }
                 }
             }
-            .totalNumbers{
+
+            .totalNumbers {
                 font-size: 30px;
             }
         }
 
-        .paginationNum{
+        .paginationNum {
             display: grid;
             justify-content: center;
             margin: 0rem 0 2rem;
 
-            .paginationMain{
+            .paginationMain {
                 margin: 2rem 0;
+                font-size: 20px;
             }
         }
     }
