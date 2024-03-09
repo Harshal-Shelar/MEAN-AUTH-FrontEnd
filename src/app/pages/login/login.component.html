@@ -1,23 +1,32 @@
-<div class="p-10 bg-black rounded-2xl loginBlock" *ngIf="hideLogin">
-    <h3 class="text-3xl text-center font-semibold py-3 text-white">Login</h3>
-    <form class="flex flex-col" [formGroup]="loginForm">
-        <div class="flex flex-col mt-4 mb-1">
-            <input type="text" formControlName="email" class="p-2 border border-gray-300 rounded" placeholder="Email">
+<div class="loginMain" *ngIf="hideLogin">
+    <div class="img">
+        <img src="assets/lockBack.png" alt="">
+    </div>
+    <h3 class="loginHeading">Sign In</h3>
+    <form class="loginForm cornerBorder" [formGroup]="loginForm">
+        <div class="inputGroup">
+            <div class="inputLogo">
+                <i class="fa fa-envelope-o"></i>
+                <input type="text" formControlName="email" class="inputLogin" placeholder="Email">
+            </div>
             <span *ngIf="loginForm.hasError('required', 'email') && loginForm.controls['email'].dirty"
-                class="text-red-500">*Email is required</span>
-            <span *ngIf="loginForm.hasError('email', 'email')" class="text-red-500">*Email is Invalid</span>
+                class="valErr">*Email is required</span>
+            <span *ngIf="loginForm.hasError('email', 'email')" class="valErr">*Email is Invalid</span>
         </div>
-        <div class="flex flex-col mt-4 mb-1">
-            <input type="password" formControlName="password" class="p-2 border border-gray-300 rounded"
-                placeholder="Password">
+        <div class="inputGroup">
+            <div class="inputLogo">
+                <input type="password" formControlName="password" class="inputLogin"
+                    placeholder="Password">
+                    <i class="fa fa-key"></i>
+            </div>
             <span *ngIf="loginForm.hasError('required', 'password') && loginForm.controls['password'].dirty"
-                class="text-red-500">*Password is required</span>
+                class="valErr">*Password is required</span>
         </div>
-        <button (click)="login()" [disabled]="loginForm.invalid" [class.disabled]="loginForm.invalid"
-            class="bg-indigo-500 p-2 mt-4 rounded text-white">Login</button>
+        <button (click)="login()" [disabled]="loginForm.invalid"
+            class="loginBtn">Login</button>
     </form>
-    <div class="flex justify-between mt-4">
-        <a class="text-indigo-600 ml-2 cursor-pointer" routerLink="/forgot-password">Forgot Password ?</a>
-        <a class="text-indigo-600 ml-2 cursor-pointer" routerLink="/register">Create Account</a>
+    <div class="loginLinks">
+        <a class="forgotPassword" routerLink="/forgot-password">Forgot Password ?</a>
+        <a class="createAccount" routerLink="/register">Create Account</a>
     </div>
 </div>

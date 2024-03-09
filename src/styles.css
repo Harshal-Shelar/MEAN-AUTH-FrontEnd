@@ -13,9 +13,11 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
     background-color: #0e0f14;
 }
+
 .disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -24,6 +26,36 @@ body{
 .textColor {
     color: rgb(128, 128, 128);
 }
+
+.cornerBorder {
+    --b: 2px;
+    --c: rgba(37, 117, 252, 1);
+    --w: 20px;
+
+    border: var(--b) solid #0000;
+    --_g: #0000 90deg, var(--c) 0;
+    --_p: var(--w) var(--w) border-box no-repeat;
+    background:
+        conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0 / var(--_p),
+        conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) 100% 0 / var(--_p),
+        conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0 100% / var(--_p),
+        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
+    box-sizing: border-box;
+    margin: 5px;
+}
+.registerBlock{
+    width: 800px !important;
+    margin: 0rem auto !important;
+}
+.registerInput{
+    width: 45% !important;
+    margin: 1rem !important;
+    display: inline-grid !important;
+}
+.registerBtn{
+    width: 100% !important;
+    margin: 1rem 0 !important;
+}
 .valErr {
     color: red;
     font-weight: 500;
@@ -31,6 +63,7 @@ body{
     margin-left: 11%;
     letter-spacing: 1px;
 }
+
 .headerText {
     color: rgba(37, 117, 252, 1);
     font-family: cursive;
@@ -54,21 +87,42 @@ body{
     box-shadow: 0px 0px 10px 2px black;
     background-color: transparent !important;
 }
-.ngx-pagination .current{
+
+.ngx-pagination .current {
     background-color: rgb(255, 204, 0) !important;
 }
+
 @media (max-width : 767px) {
     .loginBlock {
         width: 90%;
         padding: 20px 15px;
     }
 
-    .ngx-pagination .current{
+    .ngx-pagination .current {
         font-size: 20px;
-        
+
     }
-    .ngx-pagination a{
+
+    .ngx-pagination a {
         font-size: 25px;
         margin: 0 0.2rem;
+    }
+    .registerInput{
+        margin: 1rem 0 !important;
+        width: 100% !important;
+    }
+}
+.registerLinks{
+    display: block !important;
+    color: white;
+    font-size: 20px;
+}
+@media (max-width : 1050px) {
+    .registerBlock{
+        width: 95% !important;
+    }
+
+    .inputLogo input{
+        height: 3.5rem !important;
     }
 }
