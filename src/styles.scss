@@ -84,10 +84,7 @@
     }
 }
 .loginMain {
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
+    margin: 3rem auto;
     width: 400px;
     text-align: center;
 
@@ -157,6 +154,8 @@
             padding: 0.7rem 0;
             font-size: 22px;
             cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
         .loginBtn:hover{
             background-color: black;
@@ -175,6 +174,16 @@
         font-size: 20px;
         color: white;
         letter-spacing: 0.5px;
+
+        a{
+            color: rgba(37, 117, 252, 1);
+        }
+
+        a:hover{
+            color: white;
+            text-shadow: 0px 1px 5px rgba(37, 117, 252, 1);
+            transition: 0.5s;
+        }
     }
 }
 
@@ -199,6 +208,21 @@
     .overlay {
         .popup {
             width: 90%;
+        }
+    }
+}
+
+@media (max-width : 450px) {
+    .loginMain{
+        .loginForm{
+            padding: 1rem;
+        }
+        .loginLinks{
+            display: grid;
+            justify-content: center;
+            font-size: 25px;
+            line-height: 50px;
+            letter-spacing: 1px;
         }
     }
 }

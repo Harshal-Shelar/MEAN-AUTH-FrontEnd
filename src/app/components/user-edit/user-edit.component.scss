@@ -1,51 +1,82 @@
 .mainAddForm {
     margin: 7rem auto 2rem;
-    width: 500px;
+    width: 1000px;
     padding: 2rem;
     border-radius: 20px;
     background-color: #121522;
-    box-shadow: 0px 0px 15px 1px rgb(0, 0, 0);
+    box-shadow: 0px 0px 35px 1px rgb(0, 0, 0);
 
-    h2 {
-        text-align: center;
-        font-size: 40px;
-        color: rgba(37, 117, 252, 1);
-        letter-spacing: 2px;
-    }
+    .headingCheckBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    form {
-        display: grid;
-        width: 100%;
+        h2 {
+            text-align: center;
+            font-size: 40px;
+            color: rgba(37, 117, 252, 1);
+            letter-spacing: 2px;
+        }
 
-        .inputGroup{
+        .mainCheckBox {
             display: flex;
             gap: 1rem;
             align-items: center;
 
-            i{
-                margin-bottom: -1.5rem;
-                font-size: 20px;
-                color: rgb(255, 204, 0);
-                width: 7%;
-                text-align: center;
-            }
-            
-            input{
-                outline: none;
-                border-bottom: 2px solid rgba(37, 117, 252, 1);
-                background-color: transparent;
+            span {
                 color: white;
-                font-size: 18px;
-                margin: 2.2rem 0 0.5rem;
-                padding:0 0 0.2rem 0.4rem;
-                width: 100%;
                 letter-spacing: 1px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .horiLine{
+        width: 100%;
+        height: 1px;
+        background-color: gray;
+        margin-top: 2rem;
+    }
+
+    form {
+        display: block;
+        width: 100%;
+
+        .errInputLogo {
+            display: inline-grid;
+            width: 48%;
+            margin: 0 0.5rem;
+
+            .inputGroup {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+
+                i {
+                    margin-bottom: -3.5rem;
+                    font-size: 24px;
+                    color: rgb(255, 204, 0);
+                    width: 7%;
+                    text-align: center;
+                }
+
+                input {
+                    outline: none;
+                    border-bottom: 1px solid rgba(37, 117, 252, 1);
+                    background-color: transparent;
+                    color: white;
+                    font-size: 18px;
+                    margin: 4rem 0 0.5rem;
+                    padding: 0 0 0.2rem 0.4rem;
+                    width: 90%;
+                    letter-spacing: 1px;
+                }
             }
         }
 
+
         .actionBtns {
-            display: flex;
-            gap: 1rem;
+            text-align: right;
 
             .updateCan {
                 background-color: gray;
@@ -54,8 +85,9 @@
                 margin-top: 2rem;
                 font-weight: 600;
                 letter-spacing: 1px;
-                width: 100%;
+                width: 120px;
                 color: black;
+                margin-left: 1rem;
             }
 
             .updateCan:hover {
@@ -72,8 +104,9 @@
                 margin-top: 2rem;
                 font-weight: 600;
                 letter-spacing: 1px;
-                width: 100%;
+                width: 120px;
                 color: white;
+                margin-left: 1rem;
             }
 
             .updateDel:hover {
@@ -90,8 +123,9 @@
                 margin-top: 2rem;
                 font-weight: 600;
                 letter-spacing: 1px;
-                width: 100%;
+                width: 120px;
                 color: black;
+                margin-left: 1rem;
             }
 
             .updateBtn:hover {
@@ -109,11 +143,12 @@
         width: 90%;
 
         form {
-            .inputGroup{
+            .inputGroup {
                 input {
                     font-size: 20px;
                 }
-                i{
+
+                i {
                     font-size: 24px;
                 }
             }
@@ -125,7 +160,8 @@
     .mainAddForm {
         form {
             .actionBtns {
-                display: grid;
+                display: grid !important;
+                justify-content:unset !important;
 
                 .updateDel,
                 .updateBtn {
@@ -135,11 +171,84 @@
                 .updateCan,
                 .updateDel,
                 .updateBtn {
+                    width: 100%;
                     padding: 0.7rem;
                     font-size: 24px;
+                    margin: 1.5rem 0 0;
+                }
+            }
+            .errInputLogo{
+                .inputGroup{
+                    gap: 1rem;
+                    i{
+                        margin-bottom: -3rem;
+                        font-size: 25px;
+                        margin-left: -0.7rem;
+                    }
+                    input{
+                        font-size: 22px;
+                        margin: 3rem 0 0.5rem;
+                        width: 88%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width : 521px) {
+    .mainAddForm{
+        .headingCheckBox{
+            display: grid;
+            justify-content: center;
+
+            .mainCheckBox{
+                margin: 1rem auto;
+                span{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+@media (max-width : 1065px) {
+    .mainAddForm {
+        width: 90%;
+    }
+}
+
+@media (max-width : 960px) {
+    .mainAddForm {
+        form {
+            .errInputLogo {
+                width: 47%;
+
+                .inputGroup{
+                    input{
+                        font-size: 22px;
+                    }
                 }
             }
         }
     }
 }
 
+@media (max-width : 767px) {
+    .mainAddForm {
+        .horiLine{
+            margin-top: 1rem;
+        }
+        form {
+            .errInputLogo {
+                width: 100%;
+            }
+            .actionBtns{
+                display: flex;
+                justify-content: space-between;
+
+                .updateCan, .updateDel, .updateBtn{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

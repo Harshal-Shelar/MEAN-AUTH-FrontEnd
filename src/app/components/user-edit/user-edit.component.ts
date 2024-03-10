@@ -18,6 +18,7 @@ export class UserEditComponent implements OnInit {
   selectedUser: any;
   deleteUserName: any;
   formInvalid : any = false;
+  isChecked : any = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -95,4 +96,8 @@ export class UserEditComponent implements OnInit {
     this.sharedService.setData(false);
   }
 
+  changed(evt:any) {
+    this.isChecked = evt.target.checked;
+    console.log(evt.target.checked);
+  }
 }

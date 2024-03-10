@@ -15,9 +15,9 @@
         </div>
         <div class="inputGroup">
             <div class="inputLogo">
+                <i class="fa fa-key"></i>
                 <input type="password" formControlName="password" class="inputLogin"
                     placeholder="Password">
-                    <i class="fa fa-key"></i>
             </div>
             <span *ngIf="loginForm.hasError('required', 'password') && loginForm.controls['password'].dirty"
                 class="valErr">*Password is required</span>

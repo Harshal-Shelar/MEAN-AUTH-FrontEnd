@@ -30,8 +30,8 @@ export class UserListComponent implements OnInit {
   }
 
   getUserList() {
-    this.apiService.getAllUsers().subscribe((data) => {
-      this.userList = data.reverse();
+    this.apiService.getAllUsers().subscribe(async (data) => {
+      this.userList = await data.reverse();
       this.totalEmp = data.length;
 
       this.userList.map((item:any)=>{
@@ -78,8 +78,8 @@ export class UserListComponent implements OnInit {
   onItemChange(value: any) {
     this.dept = [];
     if(value !== 'All'){
-      this.apiService.getAllUsers().subscribe((data) => {
-        data.map((item:any)=>{
+      this.apiService.getAllUsers().subscribe(async(data) => {
+        await data.map((item:any)=>{
           
           if(item.salary === value){
             this.dept.push(item)

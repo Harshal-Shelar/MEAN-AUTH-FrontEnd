@@ -13,12 +13,12 @@
             Total Employees : <span>{{ totalEmp }}</span>
         </div>
     </div>
-    <div class="cardMain" *ngFor="let item of userList | filter : searchText | paginate
+    <div class="cardMain" *ngFor="let item of userList | paginate
     : {
         itemsPerPage: tableSize,
         currentPage: page,
         totalItems: count
-      }">
+      }  | filter : searchText ">
         <h2 class="cardHeading">{{item.name}}</h2>
         <h3><i class="fa fa-envelope-o"></i> : {{item.email}}</h3>
         <h3><i class="fa fa-phone"></i> : {{item.phoneNumber}}</h3>

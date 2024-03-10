@@ -24,7 +24,7 @@
 
             i{
                 margin-bottom: -1.5rem;
-                font-size: 20px;
+                font-size: 24px;
                 color: rgb(255, 204, 0);
                 width: 7%;
                 text-align: center;
@@ -99,7 +99,7 @@
             }
 
             .addActionBtn{
-                display: grid;
+                display: flex;
                 margin-top: 2rem;
 
                 .submitBtn, .cancelBtn{
@@ -111,3 +111,12 @@
     }
 }
 
+@media (max-width : 450px) {
+    .mainAddForm{
+        form{
+            .addActionBtn{
+                display: grid;
+            }
+        }
+    }
+}

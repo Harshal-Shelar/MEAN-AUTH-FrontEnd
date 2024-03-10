@@ -27,6 +27,66 @@ body {
     color: rgb(128, 128, 128);
 }
 
+.switch {
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #595959;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 .cornerBorder {
     --b: 2px;
     --c: rgba(37, 117, 252, 1);
@@ -43,19 +103,22 @@ body {
     box-sizing: border-box;
     margin: 5px;
 }
-.registerBlock{
+
+.registerBlock {
     width: 800px !important;
-    margin: 0rem auto !important;
 }
-.registerInput{
+
+.registerInput {
     width: 45% !important;
     margin: 1rem !important;
     display: inline-grid !important;
 }
-.registerBtn{
+
+.registerBtn {
     width: 100% !important;
     margin: 1rem 0 !important;
 }
+
 .valErr {
     color: red;
     font-weight: 500;
@@ -92,37 +155,83 @@ body {
     background-color: rgb(255, 204, 0) !important;
 }
 
+.registerLinks {
+    display: block !important;
+    color: white;
+    margin: 1rem 2rem;
+    font-size: 20px;
+}
+
+.registerLinks span a {
+    color: rgba(37, 117, 252, 1);
+}
+
+.registerLinks span a:hover {
+    color: white;
+    transition: 0.5s;
+    text-shadow: 0px 2px 10px rgba(37, 117, 252, 1);
+}
+
+.disableInp{
+    color: rgb(134, 134, 134) !important;
+    cursor: not-allowed;
+}
+
+@media (max-width : 550px) {
+    .registerBlock {
+        letter-spacing: 2px;
+        line-height: 50px;
+    }
+}
+
 @media (max-width : 767px) {
     .loginBlock {
         width: 90%;
         padding: 20px 15px;
     }
 
+    .switch{
+        width: 57px;
+        height: 30px;
+    }
+    .slider:before{
+        left: 3px;
+        height: 23px;
+        width: 23px;
+    }
+
     .ngx-pagination .current {
         font-size: 20px;
 
     }
-
+    .addBtnFlex{
+        display: flex;
+    }
     .ngx-pagination a {
         font-size: 25px;
         margin: 0 0.2rem;
     }
-    .registerInput{
+
+    .registerInput {
         margin: 1rem 0 !important;
         width: 100% !important;
     }
+
+    .registerLinks {
+        font-size: 25px !important;
+    }
+
+    .registerLinks span a {
+        text-wrap: nowrap;
+    }
 }
-.registerLinks{
-    display: block !important;
-    color: white;
-    font-size: 20px;
-}
+
 @media (max-width : 1050px) {
-    .registerBlock{
+    .registerBlock {
         width: 95% !important;
     }
 
-    .inputLogo input{
+    .inputLogo input {
         height: 3.5rem !important;
     }
 }
