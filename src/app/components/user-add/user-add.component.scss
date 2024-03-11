@@ -1,53 +1,75 @@
-.mainAddForm{
-    margin: 7rem auto 2rem;
-    width: 500px;
+.mainAddForm {
+    margin: 7rem auto 5rem;
+    width: 1000px;
     padding: 2rem;
     border-radius: 20px;
     background-color: #121522;
-    box-shadow: 0px 0px 15px 1px rgb(0, 0, 0);
+    box-shadow: 0px 0px 35px 1px rgb(0, 0, 0);
 
-    h2{
+    h2 {
         text-align: center;
-        font-size: 40px;
+        font-size: 50px;
         color: rgba(37, 117, 252, 1);
         letter-spacing: 2px;
+        font-family: "Anta", sans-serif;
     }
 
-    form{
-        display: grid;
+    .horiLine {
+        width: 100%;
+        height: 1px;
+        background-color: gray;
+        margin-top: 2rem;
+    }
+
+    form {
+        display: block;
         width: 100%;
 
-        .inputGroup{
-            display: flex;
-            gap: 1rem;
-            align-items: center;
+        .errInputLogo {
+            display: inline-grid;
+            width: 47%;
+            margin: 1rem 0.7rem;
 
-            i{
-                margin-bottom: -1.5rem;
-                font-size: 24px;
-                color: rgb(255, 204, 0);
-                width: 7%;
-                text-align: center;
-            }
-            
-            input{
-                outline: none;
-                border-bottom: 2px solid rgba(37, 117, 252, 1);
-                background-color: transparent;
-                color: white;
-                font-size: 18px;
-                margin: 2.2rem 0 0.5rem;
-                padding:0 0 0.2rem 0.4rem;
-                width: 100%;
-                letter-spacing: 1px;
+            .inputGroup {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+    
+                i {
+                    margin-bottom: -1.5rem;
+                    font-size: 24px;
+                    color: rgb(255, 204, 0);
+                    width: 7%;
+                    text-align: center;
+                }
+    
+                input {
+                    outline: none;
+                    border-bottom: 2px solid rgba(37, 117, 252, 1);
+                    background-color: transparent;
+                    color: white;
+                    font-size: 18px;
+                    margin: 2.2rem 0 0.5rem;
+                    padding: 0 0 0.2rem 0.4rem;
+                    width: 100%;
+                    letter-spacing: 1px;
+                }
+    
+                input[type="date"]::-webkit-calendar-picker-indicator {
+                    filter: invert(1);
+                }
             }
         }
 
-        .addActionBtn{
+       
+
+        .addActionBtn {
             display: flex;
             gap: 1rem;
+            justify-content: right;
+            margin-right: 1.2rem;
 
-            .cancelBtn{
+            .cancelBtn {
                 background-color: gray;
                 font-size: 18px;
                 padding: 0.7rem 0.5rem;
@@ -55,15 +77,17 @@
                 font-weight: 600;
                 letter-spacing: 1px;
                 color: rgb(0, 0, 0);
-                width: 100%;
+                width: 120px;
             }
-            .cancelBtn:hover{
+
+            .cancelBtn:hover {
                 background-color: black;
                 transition: 0.5s;
                 color: gray;
                 box-shadow: 0px 0px 10px 2px gray;
             }
-            .submitBtn{
+
+            .submitBtn {
                 background-color: rgba(37, 117, 252, 1);
                 font-size: 18px;
                 padding: 0.7rem 0.5rem;
@@ -71,38 +95,59 @@
                 font-weight: 600;
                 letter-spacing: 1px;
                 color: black;
-                width: 100%;
+                width: 120px;
             }
-            .submitBtn:hover{
+
+            .submitBtn:hover {
                 background-color: black;
                 transition: 0.5s;
                 color: rgba(37, 117, 252, 1);
                 box-shadow: 0px 0px 10px 2px rgba(37, 117, 252, 1);
+            }
+
+            .resetButton {
+                background-color: rgb(255, 204, 0);
+                font-size: 18px;
+                padding: 0.7rem 0.5rem;
+                margin-top: 2rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: black;
+                width: 120px;
+            }
+
+            .resetButton:hover {
+                background-color: black;
+                color: rgb(255, 204, 0);
+                transition: 0.5s;
+                box-shadow: 0px 0px 10px 2px rgb(255, 204, 0);
             }
         }
     }
 }
 
 @media (max-width : 600px) {
-    .mainAddForm{
+    .mainAddForm {
         width: 90%;
 
-        form{
-            .inputGroup{
+        form {
+            .inputGroup {
 
-                input{
+                input {
                     font-size: 20px;
                 }
-                i{
+
+                i {
                     font-size: 24px;
                 }
             }
 
-            .addActionBtn{
+            .addActionBtn {
                 display: flex;
                 margin-top: 2rem;
 
-                .submitBtn, .cancelBtn{
+                .submitBtn,
+                .cancelBtn {
                     font-size: 22px;
                     margin-top: 0;
                 }
@@ -112,9 +157,9 @@
 }
 
 @media (max-width : 450px) {
-    .mainAddForm{
-        form{
-            .addActionBtn{
+    .mainAddForm {
+        form {
+            .addActionBtn {
                 display: grid;
             }
         }

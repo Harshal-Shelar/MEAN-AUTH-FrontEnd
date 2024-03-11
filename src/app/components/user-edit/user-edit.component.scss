@@ -1,5 +1,5 @@
 .mainAddForm {
-    margin: 7rem auto 2rem;
+    margin: 7rem auto 5rem;
     width: 1000px;
     padding: 2rem;
     border-radius: 20px;
@@ -13,9 +13,10 @@
 
         h2 {
             text-align: center;
-            font-size: 40px;
+            font-size: 50px;
             color: rgba(37, 117, 252, 1);
             letter-spacing: 2px;
+            font-family: "Anta", sans-serif;
         }
 
         .mainCheckBox {
@@ -31,7 +32,7 @@
         }
     }
 
-    .horiLine{
+    .horiLine {
         width: 100%;
         height: 1px;
         background-color: gray;
@@ -71,12 +72,17 @@
                     width: 90%;
                     letter-spacing: 1px;
                 }
+
+                input[type="date"]::-webkit-calendar-picker-indicator {
+                    filter: invert(1);
+                }
             }
         }
 
 
         .actionBtns {
             text-align: right;
+            margin-right: 1.2rem;
 
             .updateCan {
                 background-color: gray;
@@ -161,7 +167,7 @@
         form {
             .actionBtns {
                 display: grid !important;
-                justify-content:unset !important;
+                justify-content: unset !important;
 
                 .updateDel,
                 .updateBtn {
@@ -177,15 +183,18 @@
                     margin: 1.5rem 0 0;
                 }
             }
-            .errInputLogo{
-                .inputGroup{
+
+            .errInputLogo {
+                .inputGroup {
                     gap: 1rem;
-                    i{
+
+                    i {
                         margin-bottom: -3rem;
                         font-size: 25px;
                         margin-left: -0.7rem;
                     }
-                    input{
+
+                    input {
                         font-size: 22px;
                         margin: 3rem 0 0.5rem;
                         width: 88%;
@@ -195,21 +204,24 @@
         }
     }
 }
+
 @media (max-width : 521px) {
-    .mainAddForm{
-        .headingCheckBox{
+    .mainAddForm {
+        .headingCheckBox {
             display: grid;
             justify-content: center;
 
-            .mainCheckBox{
+            .mainCheckBox {
                 margin: 1rem auto;
-                span{
+
+                span {
                     font-size: 25px;
                 }
             }
         }
     }
 }
+
 @media (max-width : 1065px) {
     .mainAddForm {
         width: 90%;
@@ -222,8 +234,8 @@
             .errInputLogo {
                 width: 47%;
 
-                .inputGroup{
-                    input{
+                .inputGroup {
+                    input {
                         font-size: 22px;
                     }
                 }
@@ -234,18 +246,22 @@
 
 @media (max-width : 767px) {
     .mainAddForm {
-        .horiLine{
+        .horiLine {
             margin-top: 1rem;
         }
+
         form {
             .errInputLogo {
                 width: 100%;
             }
-            .actionBtns{
+
+            .actionBtns {
                 display: flex;
                 justify-content: space-between;
 
-                .updateCan, .updateDel, .updateBtn{
+                .updateCan,
+                .updateDel,
+                .updateBtn {
                     width: 100%;
                 }
             }

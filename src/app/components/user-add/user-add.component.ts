@@ -27,6 +27,8 @@ export class UserAddComponent implements OnInit {
       address: [null, [Validators.required]],
       salary: [null, [Validators.required]],
       empId: [null, [Validators.required]],
+      startDate: [null, [Validators.required]],
+      endDate: [null, [Validators.required]],
       userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id
     })
   }
@@ -47,5 +49,9 @@ export class UserAddComponent implements OnInit {
 
   hasError = (controlName: string, errorName: string) => {
     return this.userForm.controls[controlName].hasError(errorName);
+  }
+
+  resetValue(){
+    this.userForm.reset();
   }
 }

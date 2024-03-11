@@ -10,18 +10,19 @@ import { SharedService } from 'src/app/services/shared.service';
 export class UserListComponent implements OnInit {
 
   userList: any = [];
-  searchText : any;
+  searchText: any;
   openPopup: any;
   selectedUser: any;
   deleteUserName: any;
   totalEmp: any;
-  dept : any = [];
-  deptList : any = [];
-  count : number = 0;
-  page : number = 1;
-  tableSize : number = 6;
-  tableSizes : any = [6,12,18,24];
-  duplicates : any =  [];
+  dept: any = [];
+  deptList: any = [];
+  count: number = 0;
+  page: number = 1;
+  tableSize: number = 6;
+  tableSizes: any = [6, 12, 18, 24];
+  duplicates: any = [];
+  selectedTeam: any;
 
   constructor(private apiService: ApiService, private sharedService: SharedService) { }
 
@@ -34,10 +35,10 @@ export class UserListComponent implements OnInit {
       this.userList = await data.reverse();
       this.totalEmp = data.length;
 
-      this.userList.map((item:any)=>{
+      this.userList.map((item: any) => {
         this.duplicates.push('All');
         this.duplicates.push(item.salary);
-        
+
         this.deptList = [...new Set(this.duplicates)];
       })
     })
@@ -52,12 +53,12 @@ export class UserListComponent implements OnInit {
     })
   }
 
-  onTableDataChange(event:any){
+  onTableDataChange(event: any) {
     this.page = event;
     this.getUserList();
   }
 
-  onTableSizeChange(event:any){
+  onTableSizeChange(event: any) {
     this.tableSize = event.target.value;
     this.page = 1;
     this.getUserList();
@@ -76,20 +77,26 @@ export class UserListComponent implements OnInit {
   }
 
   onItemChange(value: any) {
+    let newValue = value.target.value;
+
     this.dept = [];
-    if(value !== 'All'){
-      this.apiService.getAllUsers().subscribe(async(data) => {
-        await data.map((item:any)=>{
-          
-          if(item.salary === value){
+    if (newValue !== 'All') {
+      this.apiService.getAllUsers().subscribe(async (data) => {
+        await data.map((item: any) => {
+          if (item.salary === newValue) {
             this.dept.push(item)
             this.userList = this.dept;
             this.totalEmp = this.userList.length;
           }
         })
       })
-    }else{
+    } else {
       this.getUserList()
     }
+  }
+
+  selectChangeHandler(event: any) {
+    //update the ui
+    console.log(event.target.value);
   }
 }

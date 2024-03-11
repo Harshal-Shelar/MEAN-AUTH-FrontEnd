@@ -5,30 +5,34 @@
     </div>
     <div class="radioTotal">
         <div class="allRadio">
-            <label *ngFor="let dept of deptList">
-                <input type="radio" [checked]="dept === 'All'" name="dept" (change)="onItemChange(dept)" value={{dept}}> <span> {{dept}}</span>
-            </label>
+            <span>Select Department</span>
+            <select (change)="onItemChange($event)" name="dept" id="dept">
+                <option *ngFor="let dept of deptList" [selected]="dept === 'All'" value={{dept}}>{{dept}}</option>
+            </select>
         </div>
         <div class="totalNumbers">
             Total Employees : <span>{{ totalEmp }}</span>
         </div>
     </div>
-    <div class="cardMain" *ngFor="let item of userList | paginate
-    : {
-        itemsPerPage: tableSize,
-        currentPage: page,
-        totalItems: count
-      }  | filter : searchText ">
-        <h2 class="cardHeading">{{item.name}}</h2>
-        <h3><i class="fa fa-envelope-o"></i> : {{item.email}}</h3>
-        <h3><i class="fa fa-phone"></i> : {{item.phoneNumber}}</h3>
-        <h3><i class="fa fa-id-badge"></i> : {{item.empId}}</h3>
-        <div class="actionBtns">
-            <button class="editBtn" [routerLink]="[ '/updateUser', item._id ]"> <i class="fa fa-pencil"></i>
-                Edit</button>
-            <button class="deleteBtn" (click)="selectUser(item)"> <i class="fa fa-trash-o"></i> Delete</button>
+    <div style="text-align: center;">
+        <div class="cardMain" *ngFor="let item of userList | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          }  | filter : searchText ">
+            <h2 class="cardHeading">{{item.name}}</h2>
+            <h3><i class="fa fa-envelope-o"></i> : {{item.email}}</h3>
+            <h3><i class="fa fa-phone"></i> : {{item.phoneNumber}}</h3>
+            <h3><i class="fa fa-id-badge"></i> : {{item.empId}}</h3>
+            <div class="actionBtns">
+                <button class="editBtn" [routerLink]="[ '/updateUser', item._id ]"> <i class="fa fa-pencil"></i>
+                    Edit</button>
+                <button class="deleteBtn" (click)="selectUser(item)"> <i class="fa fa-trash-o"></i> Delete</button>
+            </div>
         </div>
     </div>
+    
     <div class="paginationNum">
         <pagination-controls class="paginationMain" previousLabel="Prev" nextLabel="Next"
             (pageChange)="onTableDataChange($event)">

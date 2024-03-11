@@ -66,6 +66,24 @@
             </div>
         </div>
 
+        <div class="errInputLogo">
+            <div class="inputGroup">
+                <i class="fa fa-calendar-plus-o"></i>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " type="date" placeholder="Employed From Date" formControlName="startDate">
+            </div>
+            <div class="valErr" *ngIf="hasError('startDate','required') && formInvalid">Start date is required
+            </div>
+        </div>
+
+        <div class="errInputLogo">
+            <div class="inputGroup">
+                <i class="fa fa-calendar-minus-o"></i>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " type="date" placeholder="Employed From Date" formControlName="endDate">
+            </div>
+            <div class="valErr" *ngIf="hasError('endDate','required') && formInvalid">Start date is required
+            </div>
+        </div>
+
         <div class="actionBtns">
             <button class="updateCan" routerLink="/listUser">Cancel</button>
             <button class="updateDel" (click)="selectUser(getUserId)">Delete</button>

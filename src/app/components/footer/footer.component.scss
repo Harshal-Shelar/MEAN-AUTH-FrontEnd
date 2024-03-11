@@ -1,0 +1,18 @@
+.mainFooter{
+    bottom: 0;
+    position: fixed;
+    background-color: black;
+    padding: 0.7rem;
+    text-align: center;
+    left: 0;
+    right: 0;
+
+    .footerContent{
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        text-wrap: wrap;
+        color: white;
+        font-family: "Anta", sans-serif;
+    }
+}

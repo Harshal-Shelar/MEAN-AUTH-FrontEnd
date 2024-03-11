@@ -36,6 +36,8 @@ export class UserEditComponent implements OnInit {
       address: [null, Validators.required],
       salary: [null, Validators.required],
       empId: [null, Validators.required],
+      startDate: [null, [Validators.required]],
+      endDate: [null, [Validators.required]],
       userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id
     });
 
@@ -66,6 +68,8 @@ export class UserEditComponent implements OnInit {
         address: result.address,
         salary: result.salary,
         empId: result.empId,
+        startDate: result.startDate,
+        endDate: result.endDate,
         userId: result.userId
       });
     });
