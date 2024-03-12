@@ -108,7 +108,6 @@ export class UserListComponent implements OnInit {
   }
 
   selectChangeHandler(event: any) {
-    //update the ui
     console.log(event.target.value);
   }
 

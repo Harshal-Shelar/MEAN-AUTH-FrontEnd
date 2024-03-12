@@ -3,7 +3,7 @@
     <div class="scrollMain">
         <div class="cardMain" 
         *ngFor="let item of historyData" 
-        [routerLink]=" item.operation == 'Added' || item.operation == 'Updated' ? [ '/updateUser', item._id ] : ''" 
+        [routerLink]=" item.operation == 'Added' || item.operation == 'Updated' ? [ '/updateUser', item.empId ] : ''" 
         (click)="closeHistory()">
             <div class="details">
                 <div class="name">

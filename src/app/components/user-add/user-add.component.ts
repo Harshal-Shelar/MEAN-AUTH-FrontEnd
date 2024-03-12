@@ -11,13 +11,14 @@ import { ApiService } from 'src/app/services/api.service';
 export class UserAddComponent implements OnInit {
 
   userForm !: FormGroup;
-  formInvalid : any = false;
+  formInvalid: any = false;
+  allEmails : any;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private apiService: ApiService,
-    private router : Router
-    ) { }
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -31,23 +32,24 @@ export class UserAddComponent implements OnInit {
       endDate: [null, [Validators.required]],
       userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id
     })
+
   }
 
   submitForm() {
 
     if (this.userForm.valid) {
       this.apiService.addUser(this.userForm.value).subscribe((data) => {
-
-        let historyData = {
-          name : data.result.name,
-          operation : 'Added',
-          userId : JSON.parse(localStorage.getItem('user_id') || '{}')._id,
-          empId : data.result._id,
-          date : new Date()
-        }
         
-        if(data){
-          this.apiService.addHistory(historyData).subscribe((item)=>{
+        let historyData = {
+          name: data.result.name,
+          operation: 'Added',
+          userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id,
+          empId: data.result._id,
+          date: new Date()
+        }
+
+        if (data) {
+          this.apiService.addHistory(historyData).subscribe((item) => {
             console.log(item);
           })
         }
@@ -55,7 +57,7 @@ export class UserAddComponent implements OnInit {
       this.router.navigateByUrl('/listUser');
       this.userForm.reset();
 
-     
+
     } else {
       this.formInvalid = true;
       console.log("Error While Submitting Form");
@@ -66,7 +68,7 @@ export class UserAddComponent implements OnInit {
     return this.userForm.controls[controlName].hasError(errorName);
   }
 
-  resetValue(){
+  resetValue() {
     this.userForm.reset();
   }
 }

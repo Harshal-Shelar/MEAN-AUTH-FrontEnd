@@ -33,6 +33,10 @@ export class ApiService {
     return this.http.get(`${url}/user-list`);
   }
 
+  getAllEmails(): Observable<any> {
+    return this.http.get(`${url}/get-all-email`);
+  }
+
   addHistory(data:any):Observable<any>{
     return this.http.post(`${url}/add-history`, data);
   }

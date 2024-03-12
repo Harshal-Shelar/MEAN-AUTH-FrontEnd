@@ -19,6 +19,7 @@ export class UserEditComponent implements OnInit {
   deleteUserName: any;
   formInvalid: any = false;
   isChecked: any = false;
+  historyEmpID : any;
 
   constructor(
     private route: ActivatedRoute,
@@ -49,13 +50,12 @@ export class UserEditComponent implements OnInit {
     if (this.updateUserForm.valid) {
       this.apiService.editUser(this.getUserId, this.updateUserForm.value).subscribe(result => {
         if (result) {
-          console.log(result);
 
           let updatedData = {
             name: result.updatedData.name,
             operation: 'Updated',
             userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id,
-            empId: result.updatedData.empId,
+            empId: this.historyEmpID,
             date: new Date()
           }
 
@@ -74,6 +74,8 @@ export class UserEditComponent implements OnInit {
   async getUser() {
     await this.apiService.getUser(this.getUserId).subscribe(result => {
 
+      this.historyEmpID = result._id;
+      
       this.deleteName = result.name;
       this.updateUserForm.patchValue({
         name: result.name,
