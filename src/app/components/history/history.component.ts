@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-history',
@@ -9,7 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class HistoryComponent implements OnInit {
 
   historyData : any = [];
-  constructor(private apiService :ApiService) { }
+  constructor(private apiService :ApiService, private sharedService: SharedService) { }
 
   ngOnInit(): void {
 
@@ -17,6 +18,10 @@ export class HistoryComponent implements OnInit {
       console.log(item);
       this.historyData = item.reverse()
     })
+  }
+
+  closeHistory(){
+    this.sharedService.setData(false);
   }
 
 }
