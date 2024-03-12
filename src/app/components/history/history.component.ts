@@ -15,7 +15,6 @@ export class HistoryComponent implements OnInit {
   ngOnInit(): void {
 
     this.apiService.getHistory().subscribe((item)=>{
-      console.log(item);
       this.historyData = item.reverse()
     })
   }
