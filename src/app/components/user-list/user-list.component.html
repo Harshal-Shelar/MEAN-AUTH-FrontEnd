@@ -5,9 +5,9 @@
     </div>
     <div class="radioTotal">
         <div class="allRadio">
-            <span>Select Department</span>
             <select (change)="onItemChange($event)" name="dept" id="dept">
-                <option *ngFor="let dept of deptList" [selected]="dept === 'All'" value={{dept}}>{{dept}}</option>
+                <option selected value="">--Select Department--</option>
+                <option *ngFor="let dept of deptList" value={{dept}}>{{dept}}</option>
             </select>
         </div>
         <div class="totalNumbers">

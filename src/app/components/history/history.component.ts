@@ -10,7 +10,6 @@ import { SharedService } from 'src/app/services/shared.service';
 export class HistoryComponent implements OnInit {
 
   historyData : any = [];
-  id : any = "65f08bc0b8d99ca79fffcbd8";
   constructor(private apiService :ApiService, private sharedService: SharedService) { }
 
   ngOnInit(): void {
