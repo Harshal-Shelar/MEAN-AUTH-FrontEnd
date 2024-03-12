@@ -32,4 +32,12 @@ export class ApiService {
   getAllUsers(): Observable<any> {
     return this.http.get(`${url}/user-list`);
   }
+
+  addHistory(data:any):Observable<any>{
+    return this.http.post(`${url}/add-history`, data);
+  }
+
+  getHistory(): Observable<any> {
+    return this.http.get(`${url}/get-history`);
+  }
 }

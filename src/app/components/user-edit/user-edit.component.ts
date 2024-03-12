@@ -17,8 +17,8 @@ export class UserEditComponent implements OnInit {
   openPopup: any;
   selectedUser: any;
   deleteUserName: any;
-  formInvalid : any = false;
-  isChecked : any = false;
+  formInvalid: any = false;
+  isChecked: any = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,8 +36,8 @@ export class UserEditComponent implements OnInit {
       address: [null, Validators.required],
       salary: [null, Validators.required],
       empId: [null, Validators.required],
-      startDate: [null, [Validators.required]],
-      endDate: [null, [Validators.required]],
+      startDate: [null, [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
+      endDate: [null, [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
       userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id
     });
 
@@ -49,7 +49,21 @@ export class UserEditComponent implements OnInit {
     if (this.updateUserForm.valid) {
       this.apiService.editUser(this.getUserId, this.updateUserForm.value).subscribe(result => {
         if (result) {
-          this.router.navigateByUrl('/listUser')
+          console.log(result);
+
+          let updatedData = {
+            name: result.updatedData.name,
+            operation: 'Updated',
+            userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id,
+            empId: result.updatedData.empId,
+            date: new Date()
+          }
+
+          this.apiService.addHistory(updatedData).subscribe((item) => {
+            console.log(item);
+          });
+          
+          this.router.navigateByUrl('/listUser');
         } else {
           this.formInvalid = true;
         }
@@ -95,13 +109,12 @@ export class UserEditComponent implements OnInit {
     this.deleteUserName = this.updateUserForm.value.name;
   }
 
-  closePopup(){
+  closePopup() {
     this.openPopup = false;
     this.sharedService.setData(false);
   }
 
-  changed(evt:any) {
+  changed(evt: any) {
     this.isChecked = evt.target.checked;
-    console.log(evt.target.checked);
   }
 }

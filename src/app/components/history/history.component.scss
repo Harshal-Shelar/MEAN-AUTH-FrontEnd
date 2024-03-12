@@ -1,0 +1,80 @@
+.historyMain {
+    background-color: transparent;
+    width: 500px;
+    max-height: 500px;
+
+    h2 {
+        font-size: 40px;
+        font-weight: bold;
+        letter-spacing: 8px;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        margin: 1rem 0;
+        font-family: "Anta", sans-serif;
+        text-shadow: 1px 1px 20px rgba(37, 117, 252, 1);
+    }
+
+    .scrollMain {
+        max-height: 400px;
+        overflow: auto;
+        box-shadow: 10px 7px 10px 2px #171827;
+
+        .cardMain {
+            display: flex;
+            padding: 0.5rem 1rem;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            margin: 1rem 0;
+            border-bottom: 1px solid gray;
+            cursor: pointer;
+
+            .details {
+                text-align: left;
+                color: white;
+                display: block;
+                letter-spacing: 1px;
+
+                .name {
+                    font-size: 22px;
+                }
+
+                .dateOperation {
+                    .operation {
+                        span {
+                            font-size: 20px;
+                            color: rgba(37, 117, 252, 1);
+                        }
+                    }
+                }
+            }
+
+            .navigate {
+                i {
+                    color: rgb(255, 204, 0);
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 204, 0);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(179, 143, 0);
+}

@@ -13,6 +13,7 @@
         <div class="totalNumbers">
             Total Employees : <span>{{ totalEmp }}</span>
         </div>
+        <button class="historyBtn" (click)="openHistoryFun()">Show History</button>
     </div>
     <div style="text-align: center;">
         <div class="cardMain" *ngFor="let item of userList | paginate
@@ -32,7 +33,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="paginationNum">
         <pagination-controls class="paginationMain" previousLabel="Prev" nextLabel="Next"
             (pageChange)="onTableDataChange($event)">
@@ -54,6 +55,17 @@
             <div class="popupBtns">
                 <button type="cancel" class="popupCancel" (click)="closePopup()">Cancel</button>
                 <button type="button" class="popupDelete" (click)="deleteUser()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" *ngIf="openHistory">
+    <div class="popup">
+        <div class="content">
+            <app-history></app-history>
+            <div class="popupBtns">
+                <button class="popupCancel" (click)="closeHistory()">Close</button>
             </div>
         </div>
     </div>

@@ -16,6 +16,7 @@ import { AuthService } from './services/auth.service';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserAddComponent } from './components/user-add/user-add.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     FooterComponent,
     UserListComponent,
     UserAddComponent,
-    UserEditComponent
+    UserEditComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

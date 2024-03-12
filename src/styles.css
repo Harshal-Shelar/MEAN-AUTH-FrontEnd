@@ -172,7 +172,7 @@ input:checked+.slider:before {
     text-shadow: 0px 2px 10px rgba(37, 117, 252, 1);
 }
 
-.disableInp{
+.disableInp {
     color: rgb(134, 134, 134) !important;
     cursor: not-allowed;
 }
@@ -190,11 +190,12 @@ input:checked+.slider:before {
         padding: 20px 15px;
     }
 
-    .switch{
+    .switch {
         width: 57px;
         height: 30px;
     }
-    .slider:before{
+
+    .slider:before {
         left: 3px;
         height: 23px;
         width: 23px;
@@ -204,9 +205,11 @@ input:checked+.slider:before {
         font-size: 20px;
 
     }
-    .addBtnFlex{
+
+    .addBtnFlex {
         display: flex;
     }
+
     .ngx-pagination a {
         font-size: 25px;
         margin: 0 0.2rem;
@@ -235,3 +238,4 @@ input:checked+.slider:before {
         height: 3.5rem !important;
     }
 }
+

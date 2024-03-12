@@ -37,10 +37,25 @@ export class UserAddComponent implements OnInit {
 
     if (this.userForm.valid) {
       this.apiService.addUser(this.userForm.value).subscribe((data) => {
-        console.log(data);
+
+        let historyData = {
+          name : data.result.name,
+          operation : 'Added',
+          userId : JSON.parse(localStorage.getItem('user_id') || '{}')._id,
+          empId : data.result._id,
+          date : new Date()
+        }
+        
+        if(data){
+          this.apiService.addHistory(historyData).subscribe((item)=>{
+            console.log(item);
+          })
+        }
       });
       this.router.navigateByUrl('/listUser');
       this.userForm.reset();
+
+     
     } else {
       this.formInvalid = true;
       console.log("Error While Submitting Form");

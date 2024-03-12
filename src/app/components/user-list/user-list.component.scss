@@ -81,6 +81,18 @@
                 font-size: 30px;
             }
         }
+
+        .historyBtn{
+            background-color: rgb(255, 204, 0);
+            padding: 0.5rem 2rem;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        .historyBtn:hover{
+            transition: 0.5s;
+            background-color: rgb(183, 146, 0);
+        }
     }
 
     .cardMain {
@@ -313,4 +325,22 @@
             }
         }
     }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 204, 0);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(179, 143, 0);
 }

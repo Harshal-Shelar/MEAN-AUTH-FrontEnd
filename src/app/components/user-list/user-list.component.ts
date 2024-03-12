@@ -22,7 +22,7 @@ export class UserListComponent implements OnInit {
   tableSize: number = 6;
   tableSizes: any = [6, 12, 18, 24];
   duplicates: any = [];
-  selectedTeam: any;
+  openHistory : any;
 
   constructor(private apiService: ApiService, private sharedService: SharedService) { }
 
@@ -48,6 +48,18 @@ export class UserListComponent implements OnInit {
     this.apiService.deleteUser(this.selectedUser._id).subscribe((data) => {
       if (data) {
         this.getUserList();
+
+        let deletedData = {
+          name: this.selectedUser.name,
+            operation: 'Deleted',
+            userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id,
+            empId: this.selectedUser.empId,
+            date: new Date()
+        }
+        
+        this.apiService.addHistory(deletedData).subscribe((item) => {
+          console.log(item);
+        });
         this.openPopup = false;
       }
     })
@@ -98,5 +110,15 @@ export class UserListComponent implements OnInit {
   selectChangeHandler(event: any) {
     //update the ui
     console.log(event.target.value);
+  }
+
+  openHistoryFun(){
+    this.sharedService.setData(true);
+    this.openHistory = true;
+  }
+
+  closeHistory(){
+    this.sharedService.setData(false);
+    this.openHistory = false;
   }
 }
