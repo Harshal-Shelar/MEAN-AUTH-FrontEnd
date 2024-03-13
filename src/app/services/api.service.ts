@@ -38,10 +38,10 @@ export class ApiService {
   }
 
   addHistory(data:any):Observable<any>{
-    return this.http.post(`${url}/add-history`, data);
+    return this.http.post(`${url}/history/add-history`, data);
   }
 
   getHistory(): Observable<any> {
-    return this.http.get(`${url}/get-history`);
+    return this.http.get(`${url}/history/get-history`);
   }
 }

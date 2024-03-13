@@ -18,6 +18,10 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/register`, data)
   }
 
+  getRegUser(){
+    return this.http.get<any>(`${this.baseUrl}/get-reg-user`)
+  }
+
   loginService(data:any){
     return this.http.post<any>(`${this.baseUrl}/login`, data)
   }

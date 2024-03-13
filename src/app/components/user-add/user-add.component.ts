@@ -14,8 +14,6 @@ export class UserAddComponent implements OnInit {
   formInvalid: any = false;
   allEmails: any = [];
   emailExist : any;
-  dateError : any;
-  dateMsg : any;
 
   constructor(
     private fb: FormBuilder,
@@ -56,19 +54,17 @@ export class UserAddComponent implements OnInit {
 
 
     if(startDateNew > lastDateNew){
-      this.dateError = true;
-      this.dateMsg = "Start date must be more than Last Date"
-    }else{
-      this.dateError = false;
+      this.formInvalid = true;
+      alert('Start date must be less than End Date')
     }
 
     if (this.allEmails.includes(newEmail)) {
       this.emailExist = true;
       this.formInvalid = true;
     } else {
-      this.dateError = false;
+      this.formInvalid = false;
+
       this.apiService.addUser(this.userForm.value).subscribe((data) => {
-        this.formInvalid = false;
 
         let historyData = {
           name: data.result.name,

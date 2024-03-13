@@ -12,6 +12,7 @@ import { confirmPasswordValidator } from 'src/app/validators/confirm-password.va
 export class RegisterComponent implements OnInit {
 
   registerForm !: FormGroup;
+  allRegEmail : any = [];
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -30,18 +31,33 @@ export class RegisterComponent implements OnInit {
       validator : confirmPasswordValidator('password','confirmPassword')
     }
     )
+
+    this.authService.getRegUser().subscribe((data)=>{
+      console.log(data);
+      data.map((item:any)=>{
+        this.allRegEmail.push(item.email);
+      })
+    })
   }
 
   regiter(){
-    this.authService.registerService(this.registerForm.value).subscribe({
-      next : (res)=>{
-        alert("User created");
-        this.registerForm.reset();
-        this.router.navigateByUrl('/login')
-      },
-      error:(err)=>{
-        console.log(err);
-      }
-    })
+
+    let emailCheck = this.registerForm.value.email;
+    console.log(emailCheck);
+
+    if(this.allRegEmail.includes(emailCheck)){
+      alert('Email Already exist in Database')
+    }else{
+      this.authService.registerService(this.registerForm.value).subscribe({
+        next : (res)=>{
+          alert("User created");
+          this.registerForm.reset();
+          this.router.navigateByUrl('/login')
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      })
+    }
   }
 }
