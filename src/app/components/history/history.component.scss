@@ -1,6 +1,6 @@
 .historyMain {
     background-color: transparent;
-    width: 500px;
+    width: 100%;
     max-height: 500px;
 
     h2 {
@@ -20,49 +20,81 @@
         box-shadow: 10px 7px 10px 2px #171827;
 
         .cardMain {
-            display: flex;
-            padding: 0.5rem 1rem;
-            justify-content: space-between;
-            align-items: center;
-            background-color: transparent;
-            margin: 1rem 0;
-            border-bottom: 1px solid #34375d;
-            cursor: pointer;
+            width: 100%;
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+                margin: 1rem 0;
+                border: 1px solid #34375d;
+                padding: 0.5rem 1rem;
+                background-color: transparent;
 
-            .details {
-                text-align: left;
-                color: white;
-                display: block;
-                letter-spacing: 1px;
+                .details {
+                    text-align: left;
+                    color: white;
+                    display: block;
+                    letter-spacing: 1px;
 
-                .name {
-                    font-size: 22px;
+                    .name {
+                        font-size: 22px;
+                    }
+
+                    .dateOperation {
+                        .operation {
+                            span {
+                                font-size: 20px;
+                                color: rgba(37, 117, 252, 1);
+                            }
+                        }
+                    }
                 }
 
-                .dateOperation {
-                    .operation {
-                        span {
-                            font-size: 20px;
-                            color: rgba(37, 117, 252, 1);
-                        }
+                .navigate {
+                    i {
+                        color: rgb(255, 204, 0);
+                        font-size: 25px;
                     }
                 }
             }
 
-            .navigate {
-                i {
-                    color: rgb(255, 204, 0);
-                    font-size: 25px;
-                }
-            }
+        }
+
+        .cardMain:hover {
+            transition: 0.5s;
+            border: 1px solid #0e0e16;
+            box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
         }
     }
 
 }
 
+@media (max-width : 640px) {
+    .historyMain {
+        width: 100%;
+
+        .scrollMain {
+            .cardMain {
+                display: grid;
+
+                li {
+                    .navigate {
+                        i {
+                            display: none;
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 ::-webkit-scrollbar {
     width: 7px;
-    display: none;
+    // display: none;
 }
 
 ::-webkit-scrollbar-track {

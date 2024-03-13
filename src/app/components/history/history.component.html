@@ -1,22 +1,23 @@
 <div class="historyMain">
     <h2>History</h2>
     <div class="scrollMain">
-        <div class="cardMain" 
-        *ngFor="let item of historyData" 
-        [routerLink]=" item.operation == 'Added' || item.operation == 'Updated' ? [ '/updateUser', item.empId ] : ''" 
-        (click)="closeHistory()">
-            <div class="details">
-                <div class="name">
-                    {{item.name}}
+        <ul class="cardMain">
+            <li *ngFor="let item of historyData" 
+            [routerLink]=" item.operation == 'Added' || item.operation == 'Updated' ? [ '/updateUser', item.empId ] : ''" 
+            (click)="closeHistory()">
+                <div class="details">
+                    <span class="name">
+                        {{item.name}}
+                    </span>
+                    <div class="dateOperation">
+                        <span class="operation">is <span> {{item.operation}}</span></span>
+                        <span class="date"> on : {{item.date | date:'yyyy-MM-dd'}}</span>
+                    </div>
                 </div>
-                <div class="dateOperation">
-                    <span class="operation">is <span> {{item.operation}}</span></span>
-                    <span class="date"> at : {{item.date}}</span>
+                <div class="navigate">
+                    <i *ngIf="item.operation == 'Added' || item.operation == 'Updated'" class="fa fa-arrow-right"></i>
                 </div>
-            </div>
-            <div class="navigate">
-                <i *ngIf="item.operation == 'Added' || item.operation == 'Updated'" class="fa fa-mail-forward"></i>
-            </div>
-        </div>
+            </li>
+        </ul>
     </div>
 </div>
