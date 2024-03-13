@@ -1,7 +1,7 @@
 .historyMain {
     background-color: transparent;
-    width: 100%;
-    max-height: 500px;
+    width: 400px;
+    max-height: 450px;
 
     h2 {
         font-size: 40px;
@@ -21,11 +21,12 @@
 
         .cardMain {
             width: 100%;
+
             li {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 100%;
+                width: 90%;
                 cursor: pointer;
                 margin: 1rem 0;
                 border: 1px solid #34375d;
@@ -43,6 +44,7 @@
                     }
 
                     .dateOperation {
+                        text-wrap: nowrap;
                         .operation {
                             span {
                                 font-size: 20px;
@@ -59,14 +61,14 @@
                     }
                 }
             }
-
+            li:hover {
+                transition: 0.5s;
+                border: 1px solid #0e0e16;
+                box-shadow: 0px 0px 10px 2px black;
+            }
         }
 
-        .cardMain:hover {
-            transition: 0.5s;
-            border: 1px solid #0e0e16;
-            box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
-        }
+        
     }
 
 }
@@ -80,6 +82,8 @@
                 display: grid;
 
                 li {
+                    width: 96%;
+
                     .navigate {
                         i {
                             display: none;

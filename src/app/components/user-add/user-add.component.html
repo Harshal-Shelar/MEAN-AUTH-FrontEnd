@@ -18,6 +18,7 @@
             </div>
             <div class="valErr" *ngIf="hasError('email','required') && formInvalid">Email is required
             </div>
+            <div class="valErr" *ngIf="emailExist">Email Already Exist</div>
         </div>
         <div class="errInputLogo">
             <div class="inputGroup">
@@ -25,6 +26,8 @@
                 <input type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
             </div>
             <div class="valErr" *ngIf="hasError('phoneNumber','required') && formInvalid">Phone Number is required
+            </div>
+            <div class="valErr" *ngIf="f.phoneNumber.errors?.pattern">Phone Number must be in numbers with 10 digits
             </div>
         </div>
         <div class="errInputLogo">
@@ -66,6 +69,7 @@
             </div>
             <div class="valErr" *ngIf="hasError('endDate','required') && formInvalid">End date is required
             </div>
+            <div class="valErr" *ngIf="dateError">{{dateMsg}}</div>
         </div>
 
         <div class="addActionBtn addBtnFlex">

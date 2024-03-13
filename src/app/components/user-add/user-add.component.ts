@@ -12,7 +12,10 @@ export class UserAddComponent implements OnInit {
 
   userForm !: FormGroup;
   formInvalid: any = false;
-  allEmails : any;
+  allEmails: any = [];
+  emailExist : any;
+  dateError : any;
+  dateMsg : any;
 
   constructor(
     private fb: FormBuilder,
@@ -24,22 +27,49 @@ export class UserAddComponent implements OnInit {
     this.userForm = this.fb.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
-      phoneNumber: [null, [Validators.required]],
+      phoneNumber: [null, [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       address: [null, [Validators.required]],
-      salary: [null, [Validators.required]],
+      salary: [null, [Validators.required, Validators.maxLength(3), Validators.minLength(3)]],
       empId: [null, [Validators.required]],
       startDate: [null, [Validators.required]],
       endDate: [null, [Validators.required]],
       userId: JSON.parse(localStorage.getItem('user_id') || '{}')._id
     })
 
+    this.apiService.getAllEmails().subscribe((items) => {
+      items.map((data: any) => {
+        this.allEmails.push(data.email);
+      });
+    })
+  }
+
+  get f(){
+    return this.userForm.controls;  
   }
 
   submitForm() {
 
-    if (this.userForm.valid) {
+    let newEmail = this.userForm.value.email;
+
+    let startDateNew = new Date(this.userForm.value.startDate);
+    let lastDateNew = new Date(this.userForm.value.endDate);
+
+
+    if(startDateNew > lastDateNew){
+      this.dateError = true;
+      this.dateMsg = "Start date must be more than Last Date"
+    }else{
+      this.dateError = false;
+    }
+
+    if (this.allEmails.includes(newEmail)) {
+      this.emailExist = true;
+      this.formInvalid = true;
+    } else {
+      this.dateError = false;
       this.apiService.addUser(this.userForm.value).subscribe((data) => {
-        
+        this.formInvalid = false;
+
         let historyData = {
           name: data.result.name,
           operation: 'Added',
@@ -56,11 +86,6 @@ export class UserAddComponent implements OnInit {
       });
       this.router.navigateByUrl('/listUser');
       this.userForm.reset();
-
-
-    } else {
-      this.formInvalid = true;
-      console.log("Error While Submitting Form");
     }
   }
 
