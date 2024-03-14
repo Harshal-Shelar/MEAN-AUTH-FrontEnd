@@ -22,7 +22,7 @@ export class ApiService {
   }
 
   getUser(id:any): Observable<any> {
-    return this.http.get(`${url}/userUpdate/${id}`, httpOptions);
+    return this.http.get(`${url}/getUserId/${id}`, httpOptions);
   }
 
   editUser(id:any, data:any): Observable<any> {
