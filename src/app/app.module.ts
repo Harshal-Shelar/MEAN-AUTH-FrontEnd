@@ -17,6 +17,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserAddComponent } from './components/user-add/user-add.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { HistoryComponent } from './components/history/history.component';
+import { RegisterDetailsComponent } from './components/register-details/register-details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HistoryComponent } from './components/history/history.component';
     UserListComponent,
     UserAddComponent,
     UserEditComponent,
-    HistoryComponent
+    HistoryComponent,
+    RegisterDetailsComponent
   ],
   imports: [
     BrowserModule,

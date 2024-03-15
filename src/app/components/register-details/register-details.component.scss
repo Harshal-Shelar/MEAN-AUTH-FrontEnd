@@ -1,0 +1,87 @@
+.registerDetailsMain {
+    margin: 5rem auto;
+    width: 500px;
+
+    .regCard {
+        h2 {
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            margin: 1rem 0;
+            padding-top: 1.5rem;
+            font-family: "Anta", sans-serif;
+            text-shadow: 1px 1px 10px rgba(37, 117, 252, 1);
+        }
+
+        form {
+            padding: 2rem;
+            border: 1px solid #161724;
+            border-radius: 0px;
+            margin: 2rem 0 0;
+            background-color: #161724;
+            box-shadow: 0px 0px 30px 2px black;
+
+            img {
+                height: 10rem;
+                width: auto;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .enableEdit{
+                display: flex;
+                gap: 0.5rem;
+                justify-content: right;
+                text-align: right;
+                top: 30px;
+                right: 0;
+                position: relative;
+
+                span{
+                    color: white;
+                    letter-spacing: 1px;
+                }
+            }
+            .field {
+                margin: 2rem 0 1rem;
+                display: grid;
+
+                label {
+                    font-size: 20px;
+                    letter-spacing: 1.5px;
+                    color: white;
+                }
+
+                input {
+                    padding: 0.4rem 0.4rem 0.4rem 0.5rem;
+                    font-size: 18px;
+                    letter-spacing: 1.5px;
+                    border-radius: 5px;
+                    color: white;
+                    background-color:#212336;;
+                }
+
+                input:focus{
+                    outline: none;
+                    border-bottom: 2px solid rgba(37, 117, 252, 1);
+                }
+            }
+            button{
+                margin: 1rem auto 0;
+                width: 100%;
+                background-color: rgb(255, 204, 0);
+                padding: 0.5rem 0;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            button:hover{
+                background-color: black;
+                color: rgb(255, 204, 0);
+                transition: 0.5s;
+                box-shadow: 0px 0px 10px 2px rgb(255, 204, 0);
+            }
+        }
+    }
+}

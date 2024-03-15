@@ -34,6 +34,14 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/reset-password`, data)
   }
 
+  getRegUserId(id:any) {
+    return this.http.get(`${this.baseUrl}/get-reg-userId/${id}`);
+  }
+
+  editRegDetails(id:any, data:any) {
+    return this.http.put(`${this.baseUrl}/update-reg-details/${id}`, data);
+  }
+
   isLoggedIn(){
     return !!localStorage.getItem("user_id");
   }

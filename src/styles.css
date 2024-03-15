@@ -166,6 +166,10 @@ input:checked+.slider:before {
     color: rgba(37, 117, 252, 1);
 }
 
+.headerName{
+    margin: 0 !important;
+}
+
 .registerLinks span a:hover {
     color: white;
     transition: 0.5s;

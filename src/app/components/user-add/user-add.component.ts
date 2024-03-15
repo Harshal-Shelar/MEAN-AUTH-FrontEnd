@@ -14,6 +14,8 @@ export class UserAddComponent implements OnInit {
   formInvalid: any = false;
   allEmails: any = [];
   emailExist : any;
+  startDateNew : any;
+  lastDateNew :any;
 
   constructor(
     private fb: FormBuilder,
@@ -49,11 +51,10 @@ export class UserAddComponent implements OnInit {
 
     let newEmail = this.userForm.value.email;
 
-    let startDateNew = new Date(this.userForm.value.startDate);
-    let lastDateNew = new Date(this.userForm.value.endDate);
+    this.startDateNew = new Date(this.userForm.value.startDate);
+    this.lastDateNew = new Date(this.userForm.value.endDate);
 
-
-    if(startDateNew > lastDateNew){
+    if(this.startDateNew > this.lastDateNew){
       this.formInvalid = true;
       alert('Start date must be less than End Date')
     }

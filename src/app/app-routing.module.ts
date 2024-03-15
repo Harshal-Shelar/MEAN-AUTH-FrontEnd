@@ -8,6 +8,7 @@ import { AuthGuard } from './gurads/auth.guard';
 import { UserAddComponent } from './components/user-add/user-add.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { RegisterDetailsComponent } from './components/register-details/register-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'listUser', pathMatch : 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'addUser', component: UserAddComponent, canActivate: [AuthGuard] },
   { path: 'listUser', component: UserListComponent, canActivate: [AuthGuard] },
   { path: 'updateUser/:id', component: UserEditComponent, canActivate: [AuthGuard] },
+  { path: 'registerDetails', component: RegisterDetailsComponent, canActivate: [AuthGuard] },
   { path: 'reset/:token', component: ResetComponent },
   { path: 'forgot-password', component: ForgetPasswordComponent },
 ];

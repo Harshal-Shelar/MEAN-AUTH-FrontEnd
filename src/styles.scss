@@ -1,4 +1,4 @@
-.overlay{
+.overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -13,13 +13,17 @@
     .popup {
         margin: 5rem auto 0;
         padding: 20px;
-        background: #1e2036;
-        border-radius: 15px;
         width: fit-content;
         position: relative;
         transition: all 5s ease-in-out;
         z-index: 999;
+        opacity: 1;
         text-align: -webkit-center;
+        background: rgba(65, 108, 181, 0.26);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
 
         .content {
             max-height: fit-content;
@@ -28,14 +32,15 @@
 
             h4 {
                 margin-top: 1rem;
-                color: #ffffff;
+                color: white;
                 text-align: center;
                 font-size: 25px;
                 letter-spacing: 1px;
+                font-weight: 500;
 
                 span {
                     font-size: 25px;
-                    font-weight: 500;
+                    font-weight: 600;
                     position: relative;
                     color: red;
                     background-clip: text;
@@ -45,35 +50,40 @@
                     text-wrap: nowrap;
                 }
             }
+
             .popupBtns {
                 display: flex;
                 justify-content: center;
                 gap: 1rem;
                 margin: 2rem 0 0.5rem;
 
-                .popupDelete, .popupCancel{
+                .popupDelete,
+                .popupCancel {
                     height: 3rem;
                     width: 7rem;
                     letter-spacing: 1px;
                     font-weight: 500;
                     font-size: 18px;
                 }
-                .popupCancel{
+
+                .popupCancel {
                     background-color: gray;
                     color: rgb(0, 0, 0);
                 }
-                .popupCancel:hover{
+
+                .popupCancel:hover {
                     background-color: black;
                     color: gray;
                     box-shadow: 0px 0px 10px 2px gray;
                     transition: 0.5s;
                 }
 
-                .popupDelete{
+                .popupDelete {
                     background-color: red;
                     color: white;
                 }
-                .popupDelete:hover{
+
+                .popupDelete:hover {
                     background-color: black;
                     color: red;
                     box-shadow: 0px 0px 10px 2px red;
@@ -83,16 +93,17 @@
         }
     }
 }
+
 .loginMain {
     margin: 3rem auto;
     width: 400px;
     text-align: center;
 
-    .img{
+    .img {
         text-align: center;
-        
 
-        img{
+
+        img {
             height: 10rem;
             width: auto;
             margin: 0 auto;
@@ -115,24 +126,25 @@
         padding: 3rem 1rem;
         text-align: center;
 
-        .inputGroup{
+        .inputGroup {
             margin: 0 0 2rem;
             align-items: center;
 
-            .inputLogo{
+            .inputLogo {
                 display: flex;
                 justify-content: center;
                 border: 0.5px solid gray;
                 border-radius: 25px;
 
-                i{
+                i {
                     font-size: 25px;
                     border-radius: 50%;
                     background-color: gray;
                     padding: 0.5rem 0.7rem;
                     align-items: center;
                 }
-                input{
+
+                input {
                     width: 100%;
                     padding-left: 1rem;
                     background-color: transparent;
@@ -141,13 +153,15 @@
                     font-size: 20px;
                     letter-spacing: 1px;
                 }
-                input:focus{
+
+                input:focus {
                     outline: none;
                 }
             }
-           
+
         }
-        .loginBtn{
+
+        .loginBtn {
             width: 100%;
             border-radius: 25px;
             background-color: rgb(255, 204, 0);
@@ -157,16 +171,17 @@
             font-weight: bold;
             letter-spacing: 1px;
         }
-        .loginBtn:hover{
+
+        .loginBtn:hover {
             background-color: black;
             box-shadow: 0px 0px 10px 3px rgb(255, 204, 0);
-            color : rgb(255, 204, 0);
+            color: rgb(255, 204, 0);
             transition: 0.5s;
-            
+
         }
     }
 
-    .loginLinks{
+    .loginLinks {
         display: flex;
         justify-content: space-between;
         padding: 0 1rem;
@@ -175,11 +190,11 @@
         color: white;
         letter-spacing: 0.5px;
 
-        a{
+        a {
             color: rgba(37, 117, 252, 1);
         }
 
-        a:hover{
+        a:hover {
             color: white;
             text-shadow: 0px 1px 5px rgba(37, 117, 252, 1);
             transition: 0.5s;
@@ -188,28 +203,31 @@
 }
 
 @media (max-width : 600px) {
-    .loginMain{
+    .loginMain {
         width: 95%;
 
-        .loginForm{
-            .inputGroup{
-                .inputLogo{
+        .loginForm {
+            .inputGroup {
+                .inputLogo {
                     border-radius: 50px;
-                    input{
+
+                    input {
                         height: 4rem;
                     }
-                    i{
+
+                    i {
                         padding: 1rem;
                     }
                 }
             }
         }
     }
+
     .overlay {
         .popup {
             width: 90%;
 
-            .content{
+            .content {
                 width: 100%;
             }
         }
@@ -217,11 +235,12 @@
 }
 
 @media (max-width : 450px) {
-    .loginMain{
-        .loginForm{
+    .loginMain {
+        .loginForm {
             padding: 1rem;
         }
-        .loginLinks{
+
+        .loginLinks {
             display: grid;
             justify-content: center;
             font-size: 25px;

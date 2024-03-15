@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
     )
 
     this.authService.getRegUser().subscribe((data)=>{
-      console.log(data);
       data.map((item:any)=>{
         this.allRegEmail.push(item.email);
       })
@@ -41,15 +40,14 @@ export class RegisterComponent implements OnInit {
   }
 
   regiter(){
-
     let emailCheck = this.registerForm.value.email;
-    console.log(emailCheck);
 
     if(this.allRegEmail.includes(emailCheck)){
       alert('Email Already exist in Database')
     }else{
       this.authService.registerService(this.registerForm.value).subscribe({
         next : (res)=>{
+          
           alert("User created");
           this.registerForm.reset();
           this.router.navigateByUrl('/login')

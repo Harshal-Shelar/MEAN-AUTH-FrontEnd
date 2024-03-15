@@ -6,7 +6,12 @@
         <div class="headerTitles">
             <span routerLink="/listUser">User List</span>
             <span routerLink="/addUser">Add User</span>
-            <span (click)="logoutFun()"> <i class="fa fa-power-off"></i> {{userDetails}}</span>
+            <div style="display: flex; gap: 0.5rem;">
+                <span>
+                    <i (click)="logoutFun()" class="fa fa-power-off"></i>
+                </span>
+                <span class="headerName" routerLink="/registerDetails">{{userDetails}}</span>
+            </div>
         </div>
         <div class="headerIcons">
             <i class="fa fa-server addIcon" routerLink="/listUser"></i>

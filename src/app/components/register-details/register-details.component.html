@@ -1,0 +1,53 @@
+<div class="registerDetailsMain">
+    <div class="regCard">
+        <h2>User Details</h2>
+        
+        <form [formGroup]="regUpdateForm">
+            <img src="assets/male1.png" alt="">
+            <div class="enableEdit">
+                <span>Edit</span>
+                <label class="switch">
+                    <div style="display: inline-block;">
+                        <input type="checkbox" (change)="changed($event)">
+                        <span class="slider round"></span>
+                    </div>
+                </label>
+            </div>
+            <div class="field">
+                <label for="">Name</label>
+                <input type="text" formControlName="firstName" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Name" value={{regDetails.firstName}}>
+            </div>
+            <div class="field">
+                <label for="">Username</label>
+                <input type="text" formControlName="userName" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Username" value={{regDetails.userName}}>
+            </div>
+            <div class="field">
+                <label for="">Email</label>
+                <input type="text" formControlName="email" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Email" value={{regDetails.email}}>
+            </div>
+            <div class="field">
+                <label for="">Password</label>
+                <input type="password" formControlName="password" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Name" value={{regDetails.password}}>
+            </div>
+            <div class="field">
+                <label for="">Confirm Password</label>
+                <input type="password" formControlName="confirmPassword" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Name" value={{regDetails.password}}>
+            </div>
+            <button (click)="openPopup()">
+                Save Changes
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="overlay" *ngIf="openRegPopup">
+    <div class="popup">
+        <div class="content">
+            <h4>Are you sure, you want to change your details ?</h4>
+            <div class="popupBtns">
+                <button type="cancel" class="popupCancel" (click)="closePopup()">No</button>
+                <button type="button" class="popupDelete" (click)="updateDetails()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

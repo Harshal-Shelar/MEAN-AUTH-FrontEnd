@@ -26,12 +26,20 @@ export class HeaderComponent implements OnInit {
     this.authService.isLoggedIn$.subscribe(res => {
       this.isLoggedIn = this.authService.isLoggedIn();
     })
+
     this.getData();
-    this.userDetails = JSON.parse(localStorage.getItem('user_id') || '{}').firstName;
+    if(JSON.parse(localStorage.getItem('newUserName') || '{}')){
+      this.userDetails = JSON.parse(localStorage.getItem('newUserName') || '{}');
+      this.userDetails = this.userDetails.split(" ")[0];
+    }else{
+      this.userDetails = JSON.parse(localStorage.getItem('user_id') || '{}').firstName;
+      this.userDetails = this.userDetails.split(" ")[0];
+    }
   }
 
   logout() {
     localStorage.removeItem("user_id");
+    localStorage.removeItem("newUserName");
     this.router.navigateByUrl('/login').then(() => {
       window.location.reload();
     });
