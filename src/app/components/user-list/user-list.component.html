@@ -1,20 +1,9 @@
 <div class="userListMain">
-    <h2>User List</h2>
+    <h2>Dashboard</h2>
     <div style="text-align: center;">
         <input type="search" class="inputSearch" placeholder="Search..." [(ngModel)]="searchText" id="">
     </div>
-    <div class="radioTotal">
-        <div class="allRadio">
-            <select (change)="onItemChange($event)" name="dept" id="dept">
-                <option selected value="">--Select Department--</option>
-                <option *ngFor="let dept of deptList" value={{dept}}>{{dept}}</option>
-            </select>
-        </div>
-        <div class="totalNumbers">
-            Total Employees : <span>{{ totalEmp }}</span>
-        </div>
-        <button class="historyBtn" (click)="openHistoryFun()">Show History</button>
-    </div>
+    
     <div style="text-align: center;">
         <div class="cardMain" *ngFor="let item of userList | paginate
         : {
@@ -60,7 +49,7 @@
     </div>
 </div>
 
-<div class="overlay" *ngIf="openHistory">
+<!-- <div class="overlay" *ngIf="openHistory">
     <div class="popup">
         <div class="content">
             <app-history></app-history>
@@ -69,4 +58,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

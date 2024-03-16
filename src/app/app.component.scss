@@ -1,0 +1,15 @@
+.sidebarRouter{
+    width: 1200px;
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto;
+
+    .sidebar{
+        width: 200px;
+    }
+
+    .routes{
+        width: 1000px;
+        margin-left: 2rem;
+    }
+}

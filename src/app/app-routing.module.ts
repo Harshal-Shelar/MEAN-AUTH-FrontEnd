@@ -9,6 +9,8 @@ import { UserAddComponent } from './components/user-add/user-add.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { RegisterDetailsComponent } from './components/register-details/register-details.component';
+import { DepartmentComponent } from './components/department/department.component';
+import { HistoryComponent } from './components/history/history.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'listUser', pathMatch : 'full'},
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'listUser', component: UserListComponent, canActivate: [AuthGuard] },
   { path: 'updateUser/:id', component: UserEditComponent, canActivate: [AuthGuard] },
   { path: 'registerDetails', component: RegisterDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'department', component: DepartmentComponent, canActivate: [AuthGuard] },
+  { path: 'history', component: HistoryComponent, canActivate: [AuthGuard] },
   { path: 'reset/:token', component: ResetComponent },
   { path: 'forgot-password', component: ForgetPasswordComponent },
 ];

@@ -1,129 +1,67 @@
 .userListMain {
-    width: 1000px;
-    margin: 5rem auto;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 16px;
+    padding: 0 2rem 2rem;
 
     h2 {
         font-size: 60px;
         font-weight: bold;
         letter-spacing: 8px;
-        text-align: center;
-        color: rgb(255, 255, 255);
+        text-align: left;
+        color: #469a7c;
         margin: 1rem 0;
-        padding-top: 1.5rem;
         font-family: "Anta", sans-serif;
-        text-shadow: 1px 1px 20px rgba(37, 117, 252, 1);
     }
 
     .inputSearch {
         height: 3rem;
-        border: 1px solid #161724;
-        width: 97%;
+        width: 100%;
         padding-left: 1rem;
         border-radius: 25px;
         margin: 1rem 0;
-        color: white;
+        color: rgb(86, 86, 86);
         font-size: 18px;
-        background-color: #1d1e2d;
+        background-color: white;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
     }
 
     .inputSearch:focus {
         outline: none;
         transition: 0.5s;
-        box-shadow: 0px 0px 15px 3px rgb(0, 0, 0);
-    }
-
-    .radioTotal {
-        display: flex;
-        justify-content: space-between;
-        margin: 1rem 1.5rem;
-        align-items: center;
-
-        .allRadio {
-            display: flex;
-            gap: 2rem;
-            color: white;
-            font-size: 16px;
-            letter-spacing: 2px;
-            align-items: center;
-
-            span {
-                font-size: 22px;
-                letter-spacing: 1.5px;
-            }
-
-            select {
-                height: 2.5rem;
-                width: 12rem;
-                border-radius: 5px;
-                color: black;
-
-                option {
-                    color: black;
-                    margin: 0.5rem 0;
-                    letter-spacing: 2px;
-                }
-            }
-
-            select:focus {
-                outline: none;
-            }
-
-        }
-
-        .totalNumbers {
-            font-size: 20px;
-            color: rgba(37, 117, 252, 1);
-            align-items: center;
-            letter-spacing: 1px;
-            text-wrap: nowrap;
-
-            span {
-                color: rgb(255, 204, 0);
-                font-size: 30px;
-            }
-        }
-
-        .historyBtn {
-            background-color: rgb(255, 204, 0);
-            padding: 0.5rem 2rem;
-            font-weight: 600;
-            border-radius: 5px;
-        }
-
-        .historyBtn:hover {
-            transition: 0.5s;
-            background-color: rgb(183, 146, 0);
-        }
+        border: 1px solid white;
+        box-shadow: 0px 0px 10px 1px #469a7c;
     }
 
     .cardMain {
         display: inline-grid;
         border-radius: 15px;
-        box-shadow: 5px 5px 10px 3px #000000;
         width: 300px;
         height: 300px;
         margin: 1rem;
-        padding: 1rem 0.5rem;
-        background-color: #161724;
+        background-color: #ffffff;
         align-items: center;
+        box-shadow: 0px 0px 15px -5px gray;
 
         .cardHeading {
             text-align: center;
             font-size: 25px;
-            color: white;
+            color: #469a7c;
             margin: 0;
             letter-spacing: 2px;
             padding-top: 0;
-            border-bottom: 1px solid rgba(37, 117, 252, 1);
+            border-bottom: 1px solid rgb(218, 218, 218);
             padding-bottom: 1rem;
             font-family: "Anta", sans-serif;
             text-shadow: none;
+            
         }
 
         h3 {
             text-align: left;
             margin: 0.6rem;
-            color: rgba(37, 117, 252, 1);
+            color: rgb(0, 0, 0);
             align-items: center;
             letter-spacing: 1px;
             font-size: 16px;
@@ -139,11 +77,19 @@
         .actionBtns {
             display: flex;
             gap: 1rem;
+            padding: 0 1rem;
+
+            .deleteBtn{
+                color: red;
+            }
+            .editBtn{
+                color: green;
+            }
 
             .deleteBtn,
             .editBtn {
-                background-color: transparent;
-                color: white;
+                // background-color: transparent;
+                // color: white;
                 font-size: 18px;
                 padding: 0.2rem;
                 letter-spacing: 1px;
@@ -169,9 +115,17 @@
     }
 
     .cardMain:hover {
-        background-color: rgb(0, 0, 0);
+        background-color: #469a7c;
         box-shadow: none;
         transition: 0.8s;
+
+        .cardHeading{
+            color: white;
+        }
+
+        h3{
+            color: white;
+        }
 
     }
 
@@ -207,6 +161,7 @@
     .userListMain {
         width: 100%;
         text-align: center;
+        padding: 0 1rem 2rem;
 
         .cardMain {
             margin: 0.5rem;
@@ -363,4 +318,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(179, 143, 0);
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:rgb(142, 142, 142);
 }

@@ -1,0 +1,28 @@
+<div class="sidebar">
+    <div class="logo-details">
+        <i class="bx bxl-c-plus-plus icon"></i>
+        <div class="logo_name">M C L</div>
+        <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+        <li *ngFor="let item of sidebarList">
+            <a routerLink="{{item.router}}">
+                <i class="{{item.icons}}"></i>
+                <span class="links_name">{{item.name}}</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li class="profile">
+            <div class="profile-details">
+                <div class="name_job">
+                    <div class="name">Harshal Shelar</div>
+                    <div class="job">MEAN / MERN Stack Developer</div>
+                </div>
+            </div>
+            <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <div class="text"><router-outlet></router-outlet></div>
+</section>

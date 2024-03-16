@@ -18,6 +18,8 @@ import { UserAddComponent } from './components/user-add/user-add.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { HistoryComponent } from './components/history/history.component';
 import { RegisterDetailsComponent } from './components/register-details/register-details.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DepartmentComponent } from './components/department/department.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { RegisterDetailsComponent } from './components/register-details/register
     UserAddComponent,
     UserEditComponent,
     HistoryComponent,
-    RegisterDetailsComponent
+    RegisterDetailsComponent,
+    SidebarComponent,
+    DepartmentComponent
   ],
   imports: [
     BrowserModule,

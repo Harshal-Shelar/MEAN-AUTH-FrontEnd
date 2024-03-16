@@ -15,7 +15,8 @@
 }
 
 body {
-    background-color: #0e0f14;
+    background-color: #f2f6f9;
+    /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
 }
 
 .disabled {
@@ -242,4 +243,6 @@ input:checked+.slider:before {
         height: 3.5rem !important;
     }
 }
-
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgb(255, 255, 255);
+}
