@@ -1,0 +1,65 @@
+.deptMain{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 16px;
+    padding: 0 2rem 2rem;
+
+    .headings{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2{
+            font-size: 60px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            text-align: left;
+            color: #469a7c;
+            margin: 1rem 0;
+            font-family: "Anta", sans-serif;
+        }
+    
+        h3{
+            text-align: right;
+        }
+    }
+
+    .cardsMain{
+        height: 10rem;
+        width: 10rem;
+        border-radius: 10px;
+        display: inline-grid;
+        background-color: white;
+        cursor: pointer;
+        align-items: center;
+        padding: 0 1rem;
+        margin: 1rem;
+        -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+             box-shadow: 0 10px 15px -7px rgb(93, 93, 93);
+
+        .number{
+            font-size: 60px;
+            text-align: center;
+            border-bottom: 1px solid rgb(181, 181, 181);
+        }
+
+        .dept{
+            letter-spacing: 1px;
+            text-align: center;
+        }
+    }
+    .cardsMain:hover{
+        transition: 0.5s;
+        background-color: #469a7c;
+        box-shadow: 0px 0px 15px 2px gray;
+
+        .number{
+            color: white;
+        }
+        .dept{
+            color: white;
+        }
+    }
+}

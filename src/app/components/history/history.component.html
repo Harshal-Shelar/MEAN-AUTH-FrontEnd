@@ -1,23 +1,15 @@
-<h2>History</h2>
 <div class="historyMain">
-    <div class="scrollMain">
-        <ul class="cardMain">
-            <li *ngFor="let item of historyData" 
-            [routerLink]=" item.operation == 'Added' || item.operation == 'Updated' ? [ '/updateUser', item.empId ] : ''" 
-            (click)="closeHistory()">
-                <div class="details">
-                    <span class="name">
-                        {{item.name}}
-                    </span>
-                    <div class="dateOperation">
-                        <span class="operation">is <span> {{item.operation}}</span></span>
-                        <span class="date"> on : {{item.date | date:'yyyy-MM-dd'}}</span>
-                    </div>
-                </div>
-                <div class="navigate">
-                    <i *ngIf="item.operation == 'Added' || item.operation == 'Updated'" class="fa fa-arrow-right"></i>
-                </div>
-            </li>
-        </ul>
+    <h2>History</h2>
+
+    <div class="histCard" style="width: 100%;">
+        <div class="card">
+            <div class="title">
+                <span>Title</span>
+                <span>Employee Added on 23-2-2024</span>
+            </div>
+            <div class="arrow">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </div>
     </div>
 </div>

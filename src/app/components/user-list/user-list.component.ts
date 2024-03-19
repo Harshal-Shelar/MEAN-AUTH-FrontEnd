@@ -14,7 +14,6 @@ export class UserListComponent implements OnInit {
   openPopup: any;
   selectedUser: any;
   deleteUserName: any;
-  totalEmp: any;
   dept: any = [];
   deptList: any = [];
   count: number = 0;
@@ -33,7 +32,6 @@ export class UserListComponent implements OnInit {
   getUserList() {
     this.apiService.getAllUsers().subscribe(async (data) => {
       this.userList = await data.reverse();
-      this.totalEmp = data.length;
 
       this.userList.map((item: any) => {
         this.duplicates.push("All")
@@ -98,7 +96,6 @@ export class UserListComponent implements OnInit {
           if (item.salary === newValue) {
             this.dept.push(item)
             this.userList = this.dept;
-            this.totalEmp = this.userList.length;
           }
         })
       })

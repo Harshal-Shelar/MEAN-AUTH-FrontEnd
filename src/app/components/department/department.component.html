@@ -1,3 +1,10 @@
 <div class="deptMain">
-    <h2>Department</h2>
+    <div class="headings">
+        <h2>Departments</h2>
+        <h3>Total Number of Employess : {{totalEmp}}</h3>
+    </div>
+    <div class="cardsMain" *ngFor="let item of deptList" (click)="onItemChange(item)">
+        <span class="number">2</span>
+        <span class="dept">{{item}}</span>
+    </div>
 </div>

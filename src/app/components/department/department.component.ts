@@ -17,11 +17,12 @@ export class DepartmentComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.getUserList();
   }
 
   getUserList() {
     this.apiService.getAllUsers().subscribe(async (data) => {
-      this.userList = await data.reverse();
+      this.userList = await data;
       this.totalEmp = data.length;
 
       this.userList.map((item: any) => {
@@ -34,16 +35,15 @@ export class DepartmentComponent implements OnInit {
   }
 
   onItemChange(value: any) {
-    let newValue = value.target.value;
 
     this.dept = [];
-    if (newValue !== 'All') {
+    if (value !== 'All') {
       this.apiService.getAllUsers().subscribe(async (data) => {
         await data.map((item: any) => {
-          if (item.salary === newValue) {
+          if (item.salary === value) {
             this.dept.push(item)
             this.userList = this.dept;
-            this.totalEmp = this.userList.length;
+            this.count(this.userList);
           }
         })
       })
@@ -51,5 +51,26 @@ export class DepartmentComponent implements OnInit {
       this.getUserList()
     }
   }
+
+  count(array:any) {
+
+    var current = null;
+    var cnt = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] != current) {
+            if (cnt > 0) {
+                console.log(current + ' comes --> ' + cnt + ' times');
+            }
+            current = array[i];
+            cnt = 1;
+        } else {
+            cnt++;
+        }
+    }
+    if (cnt > 0) {
+        console.log(current + ' comes --> ' + cnt + ' times');
+    }
+
+}
 
 }
