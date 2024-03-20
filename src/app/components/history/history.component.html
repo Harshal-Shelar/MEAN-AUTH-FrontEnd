@@ -1,14 +1,13 @@
 <div class="historyMain">
     <h2>History</h2>
-
-    <div class="histCard" style="width: 100%;">
-        <div class="card">
-            <div class="title">
-                <span>Title</span>
-                <span>Employee Added on 23-2-2024</span>
-            </div>
-            <div class="arrow">
-                <i class="fa fa-arrow-right"></i>
+    <div class="histCard">
+        <div class="card" *ngFor="let item of historyData" [routerLink]="[ '/updateUser', item.empId ]">
+            <div class="innerCard">
+                <div class="contents">
+                    <span class="title">{{item.name}}</span>
+                    <span class="details">data <span class="operation">{{item.operation}}</span> on {{item.date}} </span>
+                </div>
+                <i *ngIf="item.operation == 'Added' || item.operation == 'Updated'" class="fa fa-arrow-right"></i>
             </div>
         </div>
     </div>

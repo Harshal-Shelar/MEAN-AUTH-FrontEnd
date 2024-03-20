@@ -151,11 +151,15 @@ input:checked+.slider:before {
     box-shadow: 0px 0px 10px 2px black;
     background-color: transparent !important;
 }
-
+.ngx-pagination{
+    font-size: 18px;
+}
 .ngx-pagination .current {
     background-color: rgb(255, 204, 0) !important;
 }
-
+.ngx-pagination .disabled {
+    color: #5d5d5d !important;
+}
 .registerLinks {
     display: block !important;
     color: white;
@@ -178,7 +182,7 @@ input:checked+.slider:before {
 }
 
 .disableInp {
-    color: rgb(134, 134, 134) !important;
+    color: rgb(91, 91, 91) !important;
     cursor: not-allowed;
 }
 

@@ -1,12 +1,10 @@
-.historyMain{
-    max-height: 100vh;
-    overflow: auto;
+.historyMain {
     width: 100%;
     background-color: transparent;
     border-radius: 16px;
     padding: 0 2rem 2rem;
 
-    h2{
+    h2 {
         font-size: 60px;
         font-weight: bold;
         letter-spacing: 8px;
@@ -16,21 +14,79 @@
         font-family: "Anta", sans-serif;
     }
 
-    .histCard{
+    .histCard {
         background-color: white;
         border-radius: 20px;
         width: 100%;
-        padding: 2rem;
+        padding: 2rem 2rem 1rem;
+        min-height: fit-content;
+        max-height: 80vh;
+        overflow: auto;
 
-        .card{
-            border: 1px solid rgb(197, 197, 197);
+        .card {
+            width: 100%;
             padding: 1rem;
-            display: -webkit-inline-box;
-            justify-content: space-between;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            border: 1px solid rgb(197, 197, 197);
 
-            .title{
-                display: grid;
+            .innerCard {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .contents {
+                    display: grid;
+
+                    .title {
+                        font-weight: 600;
+                    }
+
+                    .details {
+                        font-size: 18px;
+
+                        .operation {
+                            color: #469a7c;
+                        }
+                    }
+                }
+
+                i {
+                    color: #469a7c;
+                }
             }
+
+
+        }
+
+        .card:hover {
+            transition: 0.7s;
+            box-shadow: 0px 0px 15px 2px rgb(220, 220, 220);
+            border: 1px solid rgb(255, 255, 255);
         }
     }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    padding-right: 2rem;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 204, 0);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(179, 143, 0);
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: rgb(142, 142, 142);
 }
