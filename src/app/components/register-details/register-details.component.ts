@@ -42,7 +42,6 @@ export class RegisterDetailsComponent implements OnInit {
     );
 
     this.regDetails = JSON.parse(localStorage.getItem('user_id') || '{}');
-    // console.log(this.regDetails);
 
     this.getUserId = this.regDetails._id;
     this.getUser()
