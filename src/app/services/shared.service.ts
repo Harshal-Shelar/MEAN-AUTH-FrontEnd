@@ -8,8 +8,7 @@ export class SharedService {
   public change: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
-  public setData(value:any) {
-
+  public setData(value: any) {
     this.change.emit(value);
-}
+  }
 }

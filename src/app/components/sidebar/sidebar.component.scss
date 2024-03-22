@@ -6,7 +6,6 @@
     width: 78px;
     background: #469a7c;
     padding: 6px 14px;
-    z-index: 99;
     transition: all 0.5s ease;
 
     .logo-details {
@@ -30,7 +29,10 @@
         }
     }
 }
-
+.headerOpacity {
+    opacity: 0.3;
+    pointer-events: none;
+}
 .sidebar.open {
     width: 250px;
 }

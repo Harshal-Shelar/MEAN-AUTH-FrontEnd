@@ -6,7 +6,7 @@ h2 {
     color: #469a7c;
     margin: 1rem 0;
     font-family: "Anta", sans-serif;
-    padding: 0 2rem;
+    // padding: 0 2rem;
 }
 .mainAddForm {
     width: 100%;
@@ -14,7 +14,6 @@ h2 {
     border-radius: 16px;
     box-shadow: 0px 0px 15px 2px rgb(197, 197, 197);
     padding: 2rem;
-    margin-left: 2rem;
 
     .mainCheckBox {
         display: flex;
@@ -52,10 +51,13 @@ h2 {
                     border: 1px solid rgb(187, 187, 187);
                     border-bottom: 2px solid #469a7c;
                     border-radius: 0px;
+                    border-top: 1px solid transparent;
+                    border-right: 1px solid transparent;
+                    border-left: 1px solid transparent;
                 }
 
                 input:focus{
-                    border: 1px solid rgb(198, 198, 198);
+                    border: 1px solid transparent;
                     border-bottom: 4px solid #469a7c;
                     box-shadow: none;
                 }
@@ -113,7 +115,7 @@ h2 {
                 font-weight: 600;
                 letter-spacing: 1px;
                 width: 120px;
-                color: black;
+                color: white;
                 margin-left: 1rem;
             }
 

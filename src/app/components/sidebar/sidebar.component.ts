@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,6 +11,7 @@ export class SidebarComponent implements OnInit {
   sidebar : any;
   closeBtn : any;
   searchBtn : any;
+  dataRecieve : any;
 
   sidebarList = [
     {name : 'Dashboard', router : '/listUser', icons : 'bx bx-grid-alt'},
@@ -20,7 +22,7 @@ export class SidebarComponent implements OnInit {
     {name : 'Logout', icons : 'bx bx-log-in-circle'},
   ]
 
-  constructor() {}
+  constructor(private sharedService : SharedService) {}
   ngOnInit() {
     this.sidebar = document.querySelector('.sidebar');
     this.closeBtn = document.querySelector('#btn');
@@ -45,6 +47,12 @@ export class SidebarComponent implements OnInit {
         this.closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu'); //replacing the iocns class
       }
     }
+  }
+
+  getData() {
+    this.sharedService.change.subscribe(value => {
+      this.dataRecieve = value;
+    });
   }
 
 }

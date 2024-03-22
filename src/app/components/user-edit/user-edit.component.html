@@ -74,3 +74,15 @@
         </div>
     </form>
 </div>
+
+<div class="overlay" *ngIf="openPopup">
+    <div class="popup">
+        <div class="content">
+            <h4>You want to delete the record of <span> {{deleteUserName}} ?</span></h4>
+            <div class="popupBtns">
+                <button type="cancel" class="popupCancel" (click)="closePopup()">Cancel</button>
+                <button type="button" class="popupDelete" (click)="deleteUser()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,7 +15,8 @@
 }
 
 body {
-    background-color: #f2f6f9;
+    /* background-color: #f2f6f9; */
+    background-image: linear-gradient(to bottom right, #f2f6f9 , #469a7c);
     /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
 }
 
