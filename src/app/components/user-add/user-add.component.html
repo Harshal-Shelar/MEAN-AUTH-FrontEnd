@@ -1,77 +1,63 @@
 <h2>Add User</h2>
 <div class="mainAddForm">
-    <div class="horiLine"></div>
     <form [formGroup]="userForm">
-
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-user-circle-o"></i>
-                <input type="text" placeholder="Enter Name" formControlName="name">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Enter Name" >
+                <div class="valErr" *ngIf="hasError('name','required') && formInvalid">Full Name is required
+                </div>
             </div>
-            <div class="valErr" *ngIf="hasError('name','required') && formInvalid">Full Name is required
-            </div>
-        </div>
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-envelope-o"></i>
-                <input type="email" placeholder="Enter Email" formControlName="email">
-            </div>
-            <div class="valErr" *ngIf="hasError('email','required') && formInvalid">Email is required
-            </div>
-            <div class="valErr" *ngIf="emailExist">Email Already Exist</div>
-        </div>
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-phone"></i>
-                <input type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
-            </div>
-            <div class="valErr" *ngIf="hasError('phoneNumber','required') && formInvalid">Phone Number is required
-            </div>
-            <div class="valErr" *ngIf="f.phoneNumber.errors?.pattern">Phone Number must be in numbers with 10 digits
+            <div class="form-group col-md-6">
+                <label>Email</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="Enter Email" >
+                <div class="valErr" *ngIf="hasError('email','required') && formInvalid">Email is required
+                </div>
+                <div class="valErr" *ngIf="emailExist">Email Already Exist</div>
             </div>
         </div>
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-address-book-o"></i>
-                <input type="text" placeholder="Enter Address" formControlName="address">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Phone Number</label>
+                <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Enter Phone Number" >
+                <div class="valErr" *ngIf="hasError('phoneNumber','required') && formInvalid">Phone Number is required
+                </div>
             </div>
-            <div class="valErr" *ngIf="hasError('address','required') && formInvalid">Address is required
-            </div>
-        </div>
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-briefcase"></i>
-                <input type="text" placeholder="Enter Department" formControlName="salary">
-            </div>
-            <div class="valErr" *ngIf="hasError('salary','required') && formInvalid">Department is required
+            <div class="form-group col-md-6">
+                <label>Address</label>
+                <input type="text" class="form-control" formControlName="address" placeholder="Enter Email" >
+                <div class="valErr" *ngIf="hasError('address','required') && formInvalid">Address is required
+                </div>
             </div>
         </div>
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-id-badge"></i>
-                <input type="text" placeholder="Enter Employee Id" formControlName="empId">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Department</label>
+                <input type="text" class="form-control" formControlName="salary" placeholder="Enter Department" >
+                <div class="valErr" *ngIf="hasError('salary','required') && formInvalid">Department is required
+                </div>
             </div>
-            <div class="valErr" *ngIf="hasError('empId','required') && formInvalid">Employee Id is required
-            </div>
-        </div>
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-calendar-plus-o"></i>
-                <input type="date" placeholder="Employed From Date" formControlName="startDate">
-            </div>
-            <div class="valErr" *ngIf="hasError('startDate','required') && formInvalid">Start date is required
+            <div class="form-group col-md-6">
+                <label>Employee Id</label>
+                <input type="text" class="form-control" formControlName="empId" placeholder="Enter Employee Id" >
+                <div class="valErr" *ngIf="hasError('empId','required') && formInvalid">Employee Id is required
+                </div>
             </div>
         </div>
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-calendar-minus-o"></i>
-                <input type="date" placeholder="Employed Till Date" formControlName="endDate">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Start Date</label>
+                <input type="date" class="form-control" formControlName="startDate" placeholder="Employee From Date" >
+                <div class="valErr" *ngIf="hasError('startDate','required') && formInvalid">Start Date is required
+                </div>
             </div>
-            <div class="valErr" *ngIf="hasError('endDate','required') && formInvalid">End date is required
+            <div class="form-group col-md-6">
+                <label>End Date</label>
+                <input type="date" class="form-control" formControlName="endDate" placeholder="Employee End Date" >
+                <div class="valErr" *ngIf="hasError('endDate','required') && formInvalid">End date is required
+                </div>
             </div>
-            <!-- <div class="valErr" *ngIf="startDateNew > lastDateNew && formInvalid">Last date cannot be less than Start Date</div> -->
         </div>
-
         <div class="addActionBtn addBtnFlex">
             <button class="cancelBtn" routerLink="/listUser">Cancel</button>
             <button class="resetButton" (click)="resetValue()">Reset</button>

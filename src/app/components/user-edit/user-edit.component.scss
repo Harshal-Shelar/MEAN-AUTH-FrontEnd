@@ -1,84 +1,70 @@
+h2 {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-align: left;
+    color: #469a7c;
+    margin: 1rem 0;
+    font-family: "Anta", sans-serif;
+    padding: 0 2rem;
+}
 .mainAddForm {
-    margin: 7rem auto 5rem;
-    width: 1000px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 0px 15px 2px rgb(197, 197, 197);
     padding: 2rem;
-    border-radius: 20px;
-    background-color: #121522;
-    box-shadow: 0px 0px 35px 1px rgb(0, 0, 0);
+    margin-left: 2rem;
 
-    .headingCheckBox {
+    .mainCheckBox {
         display: flex;
-        justify-content: space-between;
+        gap: 1rem;
         align-items: center;
+        justify-content: right;
+        margin-right: 1rem;
 
-        h2 {
-            text-align: center;
-            font-size: 50px;
-            color: rgba(37, 117, 252, 1);
-            letter-spacing: 2px;
-            font-family: "Anta", sans-serif;
+        span {
+            color: #469a7c;
+            letter-spacing: 1px;
+            font-size: 20px;
         }
-
-        .mainCheckBox {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-
-            span {
-                color: white;
-                letter-spacing: 1px;
-                font-size: 20px;
-            }
-        }
-    }
-
-    .horiLine {
-        width: 100%;
-        height: 1px;
-        background-color: gray;
-        margin-top: 2rem;
     }
 
     form {
-        display: block;
         width: 100%;
 
-        .errInputLogo {
-            display: inline-grid;
-            width: 48%;
-            margin: 0 0.5rem;
+        .form-row {
+            margin: 0rem 0.7rem 1rem;
 
-            .inputGroup {
-                display: flex;
-                gap: 0.5rem;
-                align-items: center;
-
-                i {
-                    margin-bottom: -3.5rem;
-                    font-size: 24px;
-                    color: rgb(255, 204, 0);
-                    width: 7%;
-                    text-align: center;
+            .form-group {
+    
+                label{
+                    margin-bottom: 0;
+                    font-size: 20px;
                 }
-
+    
                 input {
-                    outline: none;
-                    border-bottom: 1px solid rgba(37, 117, 252, 1);
                     background-color: transparent;
-                    color: white;
+                    color: rgb(34, 34, 34);
                     font-size: 18px;
-                    margin: 4rem 0 0.5rem;
-                    padding: 0 0 0.2rem 0.4rem;
-                    width: 90%;
+                    width: 100%;
                     letter-spacing: 1px;
+                    border: 1px solid rgb(187, 187, 187);
+                    border-bottom: 2px solid #469a7c;
+                    border-radius: 0px;
                 }
 
+                input:focus{
+                    border: 1px solid rgb(198, 198, 198);
+                    border-bottom: 4px solid #469a7c;
+                    box-shadow: none;
+                }
+    
                 input[type="date"]::-webkit-calendar-picker-indicator {
-                    filter: invert(1);
+                    filter: invert(0);
                 }
             }
         }
-
 
         .actionBtns {
             text-align: right;
@@ -88,7 +74,6 @@
                 background-color: gray;
                 font-size: 18px;
                 padding: 0.5rem;
-                margin-top: 2rem;
                 font-weight: 600;
                 letter-spacing: 1px;
                 width: 120px;
@@ -107,7 +92,6 @@
                 background-color: red;
                 font-size: 18px;
                 padding: 0.5rem;
-                margin-top: 2rem;
                 font-weight: 600;
                 letter-spacing: 1px;
                 width: 120px;
@@ -126,7 +110,6 @@
                 background-color: rgba(37, 117, 252, 1);
                 font-size: 18px;
                 padding: 0.5rem;
-                margin-top: 2rem;
                 font-weight: 600;
                 letter-spacing: 1px;
                 width: 120px;
@@ -143,13 +126,31 @@
         }
     }
 }
-
+@media (max-width : 767px) {
+    h2{
+        padding: 0;
+    }
+    .mainAddForm{
+        margin-left: 0;
+        form{
+            .form-row{
+                margin: 0;
+            }
+            .addActionBtn{
+                .cancelBtn , .resetButton, .submitBtn{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
 @media (max-width : 600px) {
     .mainAddForm {
         width: 90%;
 
         form {
             .inputGroup {
+
                 input {
                     font-size: 20px;
                 }
@@ -158,114 +159,31 @@
                     font-size: 24px;
                 }
             }
-        }
-    }
-}
 
-@media (max-width :500px) {
-    .mainAddForm {
-        form {
-            .actionBtns {
-                display: grid !important;
-                justify-content: unset !important;
-
-                .updateDel,
-                .updateBtn {
-                    margin: 0;
-                }
-
-                .updateCan,
-                .updateDel,
-                .updateBtn {
-                    width: 100%;
-                    padding: 0.7rem;
-                    font-size: 24px;
-                    margin: 1.5rem 0 0;
-                }
-            }
-
-            .errInputLogo {
-                .inputGroup {
-                    gap: 1rem;
-
-                    i {
-                        margin-bottom: -3rem;
-                        font-size: 25px;
-                        margin-left: -0.7rem;
-                    }
-
-                    input {
-                        font-size: 22px;
-                        margin: 3rem 0 0.5rem;
-                        width: 88%;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width : 521px) {
-    .mainAddForm {
-        .headingCheckBox {
-            display: grid;
-            justify-content: center;
-
-            .mainCheckBox {
-                margin: 1rem auto;
-
-                span {
-                    font-size: 25px;
-                }
-            }
-        }
-    }
-}
-
-@media (max-width : 1065px) {
-    .mainAddForm {
-        width: 90%;
-    }
-}
-
-@media (max-width : 960px) {
-    .mainAddForm {
-        form {
-            .errInputLogo {
-                width: 47%;
-
-                .inputGroup {
-                    input {
-                        font-size: 22px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width : 767px) {
-    .mainAddForm {
-        .horiLine {
-            margin-top: 1rem;
-        }
-
-        form {
-            .errInputLogo {
-                width: 100%;
-            }
-
-            .actionBtns {
+            .addActionBtn {
                 display: flex;
-                justify-content: space-between;
+                margin-top: 2rem;
 
-                .updateCan,
-                .updateDel,
-                .updateBtn {
+                .submitBtn,
+                .cancelBtn {
                     font-size: 22px;
-                    width: 100%;
+                    margin-top: 0;
                 }
             }
         }
     }
+}
+
+@media (max-width : 450px) {
+    .mainAddForm {
+        form {
+            .addActionBtn {
+                display: grid;
+            }
+        }
+    }
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgb(127, 127, 127);
 }

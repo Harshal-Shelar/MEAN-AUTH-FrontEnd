@@ -1,7 +1,7 @@
 <div class="registerDetailsMain">
     <div class="regCard">
         <h2>User Details</h2>
-        
+
         <form [formGroup]="regUpdateForm">
             <img src="assets/male1.png" alt="">
             <div class="enableEdit">
@@ -13,29 +13,41 @@
                     </div>
                 </label>
             </div>
-            <div class="field">
-                <label for="">Name</label>
-                <input type="text" formControlName="firstName" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Name" value={{regDetails.firstName}}>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Name</label>
+                    <input type="email" class="form-control" formControlName="firstName" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Name" value={{regDetails.firstName}}>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Username</label>
+                    <input type="text" class="form-control" formControlName="userName" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Username" value={{regDetails.userName}}>
+                </div>
             </div>
-            <div class="field">
-                <label for="">Username</label>
-                <input type="text" formControlName="userName" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Username" value={{regDetails.userName}}>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" formControlName="email" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Email" value={{regDetails.email}}>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Phone Number</label>
+                    <input type="password" class="form-control" placeholder="Enter Phone Number" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked">
+                </div>
             </div>
-            <div class="field">
-                <label for="">Email</label>
-                <input type="text" formControlName="email" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Email" value={{regDetails.email}}>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Password</label>
+                    <input type="password" class="form-control" formControlName="password" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Password" value={{regDetails.password}}>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Confirm Password</label>
+                    <input type="password" class="form-control" formControlName="confirmPassword" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Confirm Password" value={{regDetails.confirmPassword}} >
+                </div>
             </div>
-            <div class="field">
-                <label for="">Password</label>
-                <input type="password" formControlName="password" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Name" value={{regDetails.password}}>
+            <div class="saveBtn">
+                <button (click)="openPopup()">
+                    Save Changes
+                </button>
             </div>
-            <div class="field">
-                <label for="">Confirm Password</label>
-                <input type="password" formControlName="confirmPassword" [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" placeholder="Enter Name" value={{regDetails.password}}>
-            </div>
-            <button (click)="openPopup()">
-                Save Changes
-            </button>
         </form>
     </div>
 </div>

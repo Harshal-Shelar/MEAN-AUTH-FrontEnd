@@ -1,86 +1,69 @@
+<h2>User Details</h2>
 <div class="mainAddForm">
-    <div class="headingCheckBox">
-        <h2>User Details</h2>
-        <div class="mainCheckBox">
-            <span>Edit</span>
-            <label class="switch">
-                <div style="display: inline-block;">
-                    <input type="checkbox" (change)="changed($event)">
-                    <span class="slider round"></span>
-                </div>
-            </label>
-        </div>
+    <div class="mainCheckBox">
+        <span>Edit</span>
+        <label class="switch">
+            <div style="display: inline-block;">
+                <input type="checkbox" (change)="changed($event)">
+                <span class="slider round"></span>
+            </div>
+        </label>
     </div>
-    <div class="horiLine"></div>
     <form [formGroup]="updateUserForm">
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-user-circle-o"></i>
-                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" placeholder="Enter Name" formControlName="name">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Name</label>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" class="form-control" formControlName="name" placeholder="Enter Name" >
+                <div class="valErr" *ngIf="hasError('name','required') && formInvalid">Full Name is required
+                </div>
             </div>
-            <div class="valErr" *ngIf="hasError('name','required')">Name is required
-            </div>
-        </div>
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-envelope-o"></i>
-                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="email" placeholder="Enter Email" formControlName="email">
-            </div>
-            <div class="valErr" *ngIf="hasError('email','required')">Email is required
+            <div class="form-group col-md-6">
+                <label>Email</label>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" class="form-control" formControlName="email" placeholder="Enter Email" >
+                <div class="valErr" *ngIf="hasError('email','required') && formInvalid">Email is required
+                </div>
             </div>
         </div>
-
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-phone"></i>
-                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="phone" placeholder="Enter Phone" formControlName="phoneNumber">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Phone Number</label>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" class="form-control" formControlName="phoneNumber" placeholder="Enter Phone Number" >
+                <div class="valErr" *ngIf="hasError('phoneNumber','required') && formInvalid">Phone Number is required
+                </div>
             </div>
-            <div class="valErr" *ngIf="hasError('phoneNumber','required')">Phone Number is required
-            </div>
-        </div>
-
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-address-book-o"></i>
-                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" placeholder="Enter Address" formControlName="address">
-            </div>
-            <div class="valErr" *ngIf="hasError('address','required')">Address is required
+            <div class="form-group col-md-6">
+                <label>Address</label>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" class="form-control" formControlName="address" placeholder="Enter Email" >
+                <div class="valErr" *ngIf="hasError('address','required') && formInvalid">Address is required
+                </div>
             </div>
         </div>
-
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-briefcase"></i>
-                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" placeholder="Enter Department" formControlName="salary">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Department</label>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" class="form-control" formControlName="salary" placeholder="Enter Department" >
+                <div class="valErr" *ngIf="hasError('salary','required') && formInvalid">Department is required
+                </div>
             </div>
-            <div class="valErr" *ngIf="hasError('salary','required')">Department is required
-            </div>
-        </div>
-
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-id-badge"></i>
-                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" placeholder="Enter Employee Id" formControlName="empId">
-            </div>
-            <div class="valErr" *ngIf="hasError('empId','required')">Employee Id is required
+            <div class="form-group col-md-6">
+                <label>Employee Id</label>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="text" class="form-control" formControlName="empId" placeholder="Enter Employee Id" >
+                <div class="valErr" *ngIf="hasError('empId','required') && formInvalid">Employee Id is required
+                </div>
             </div>
         </div>
-
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-calendar-plus-o"></i>
-                <input [ngClass]=" !isChecked ? 'disableInp' : '' " type="date" placeholder="Employed From Date" formControlName="startDate">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Start Date</label>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="date" class="form-control" formControlName="startDate" placeholder="Employee From Date" >
+                <div class="valErr" *ngIf="hasError('startDate','required') && formInvalid">Start Date is required
+                </div>
             </div>
-            <div class="valErr" *ngIf="hasError('startDate','required') && formInvalid">Start date is required
-            </div>
-        </div>
-
-        <div class="errInputLogo">
-            <div class="inputGroup">
-                <i class="fa fa-calendar-minus-o"></i>
-                <input [ngClass]=" !isChecked ? 'disableInp' : '' " type="date" placeholder="Employed From Date" formControlName="endDate">
-            </div>
-            <div class="valErr" *ngIf="hasError('endDate','required') && formInvalid">Start date is required
+            <div class="form-group col-md-6">
+                <label>End Date</label>
+                <input [ngClass]=" !isChecked ? 'disableInp' : '' " [readonly]="!isChecked" type="date" class="form-control" formControlName="endDate" placeholder="Employee End Date" >
+                <div class="valErr" *ngIf="hasError('endDate','required') && formInvalid">End date is required
+                </div>
             </div>
         </div>
 
@@ -90,16 +73,4 @@
             <button class="updateBtn" (click)="updateForm()">Update</button>
         </div>
     </form>
-</div>
-
-<div class="overlay" *ngIf="openPopup">
-    <div class="popup">
-        <div class="content">
-            <h4>You want to delete the record of <span> {{deleteUserName}}</span> ?</h4>
-            <div class="popupBtns">
-                <button type="cancel" class="popupCancel" (click)="closePopup()">Cancel</button>
-                <button type="button" class="popupDelete" (click)="deleteUser()">Delete</button>
-            </div>
-        </div>
-    </div>
 </div>
