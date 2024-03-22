@@ -10,7 +10,6 @@ export class SidebarComponent implements OnInit {
   sidebar : any;
   closeBtn : any;
   searchBtn : any;
-  showNavBar : any = false;
 
   sidebarList = [
     {name : 'Dashboard', router : '/listUser', icons : 'bx bx-grid-alt'},
@@ -23,9 +22,6 @@ export class SidebarComponent implements OnInit {
 
   constructor() {}
   ngOnInit() {
-    if(localStorage.getItem('user_id')){
-      this.showNavBar = true;
-    }
     this.sidebar = document.querySelector('.sidebar');
     this.closeBtn = document.querySelector('#btn');
     this.searchBtn = document.querySelector('.bx-search');

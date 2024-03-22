@@ -18,14 +18,6 @@
         </div>
         <div class="inputGroup registerInput">
             <div class="inputLogo">
-                <i class="fa fa-envelope-o"></i>
-                <input type="phone" formControlName="phoneNumber"   placeholder="Phone Number">
-            </div>
-            <span *ngIf="registerForm.hasError('required', 'phoneNumber') && registerForm.controls['phoneNumber'].dirty" class="text-red-500">*Phone Number is required</span>
-            <span *ngIf="registerForm.hasError('phoneNumber', 'phoneNumber')" class="text-red-500">*Phone Number is Invalid</span>
-        </div>
-        <div class="inputGroup registerInput">
-            <div class="inputLogo">
                 <i class="fa fa-podcast"></i>
                 <input type="text" formControlName="userName"   placeholder="Username">
             </div>

@@ -22,7 +22,7 @@
             border-radius: 16px;
             margin: 2rem 0 0;
             background-color: #ffffff;
-            box-shadow: 0px 0px 35px -5px rgb(204, 204, 204);
+            box-shadow: 0px 0px 15px -5px gray;
 
             img {
                 height: 10rem;
@@ -47,14 +47,14 @@
                 }
             }
 
-            .form-row {
-                margin: 1rem 0;
+            .field {
+                margin: 2rem 0 1rem;
+                display: grid;
 
                 label {
                     font-size: 20px;
                     letter-spacing: 1.5px;
-                    color: rgb(39, 39, 39);
-                    margin-bottom: 0px;
+                    color: white;
                 }
 
                 input {
@@ -68,7 +68,6 @@
 
                 input:focus {
                     outline: none;
-                    box-shadow: none;
                     border-bottom: 2px solid rgba(37, 117, 252, 1);
                 }
             }
