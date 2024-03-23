@@ -4,7 +4,7 @@
         <input type="search" class="inputSearch" placeholder="Search..." [(ngModel)]="searchText" id="">
     </div>
     
-    <div style="text-align: left;">
+    <div style="text-align: center;">
         <div class="cardMain" *ngFor="let item of userList | paginate
         : {
             itemsPerPage: tableSize,

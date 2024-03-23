@@ -12,6 +12,13 @@
             </a>
             <span class="tooltip">{{item.name}}</span>
         </li>
+        <li >
+            <a (click)="openPopupFun()">
+                <i class="bx bx-log-in-circle"></i>
+                <span class="links_name">Logout</span>
+            </a>
+            <span class="tooltip">Logout</span>
+        </li>
         <li class="profile">
             <div class="profile-details">
                 <div class="name_job">
@@ -26,3 +33,16 @@
 <section class="home-section">
     <div class="text"><router-outlet></router-outlet></div>
 </section>
+
+<div class="overlay" *ngIf="openPopup">
+    <div class="popup">
+        <div class="content">
+            <h4>Do you really want to <span>Logout</span> from this device ?</h4>
+            <div class="popupBtns">
+                <button type="cancel" class="popupCancel" (click)="closePopup()">No</button>
+                <button type="button" class="popupDelete"
+                    (click)="logout()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

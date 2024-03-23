@@ -12,6 +12,7 @@ export class SidebarComponent implements OnInit {
   closeBtn : any;
   searchBtn : any;
   dataRecieve : any;
+  openPopup : any;
 
   sidebarList = [
     {name : 'Dashboard', router : '/listUser', icons : 'bx bx-grid-alt'},
@@ -19,7 +20,7 @@ export class SidebarComponent implements OnInit {
     {name : 'Departments', router : '/department', icons : 'bx bx-sitemap'},
     {name : 'History', router : '/history', icons : 'bx bx-share'},
     {name : 'Settings', router : '/registerDetails', icons : 'bx bx-cog'},
-    {name : 'Logout', icons : 'bx bx-log-in-circle'},
+    // {name : 'Logout', icons : 'bx bx-log-in-circle'},
   ]
 
   constructor(private sharedService : SharedService) {}
@@ -55,4 +56,18 @@ export class SidebarComponent implements OnInit {
     });
   }
 
+  logout(){
+    localStorage.removeItem('user_id')
+    window.location.reload();
+  }
+
+  closePopup(){
+    this.openPopup = false;
+    this.sharedService.setData(false);
+  }
+
+  openPopupFun(){
+    this.openPopup = true;
+    this.sharedService.setData(true);
+  }
 }

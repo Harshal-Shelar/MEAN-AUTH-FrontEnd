@@ -28,7 +28,9 @@ body {
 .textColor {
     color: rgb(128, 128, 128);
 }
-
+.width700{
+    width: 700px !important;
+}
 .switch {
     position: relative;
     display: flex;

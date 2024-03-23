@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-department',
@@ -13,8 +14,13 @@ export class DepartmentComponent implements OnInit {
   deptList: any = [];
   totalEmp: any;
   duplicates: any = [];
+  openPopup : any;
+  openDeletePopup : any;
+  deptName : any;
+  selectedUser: any;
+  deleteUserName: any;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private sharedService: SharedService) { }
 
   ngOnInit(): void {
     this.getUserList();
@@ -35,15 +41,15 @@ export class DepartmentComponent implements OnInit {
   }
 
   onItemChange(value: any) {
-
+    this.openPopup = true;
     this.dept = [];
     if (value !== 'All') {
       this.apiService.getAllUsers().subscribe(async (data) => {
         await data.map((item: any) => {
           if (item.salary === value) {
-            this.dept.push(item)
+            this.dept.push(item);
+            this.deptName = value;
             this.userList = this.dept;
-            this.count(this.userList);
           }
         })
       })
@@ -52,25 +58,19 @@ export class DepartmentComponent implements OnInit {
     }
   }
 
-  count(array:any) {
+  selectUser(user: any) {
+    this.selectedUser = user;
+    this.openDeletePopup = true;
+    this.sharedService.setData(true);
+    this.deleteUserName = user.name;
+  }
 
-    var current = null;
-    var cnt = 0;
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] != current) {
-            if (cnt > 0) {
-                console.log(current + ' comes --> ' + cnt + ' times');
-            }
-            current = array[i];
-            cnt = 1;
-        } else {
-            cnt++;
-        }
-    }
-    if (cnt > 0) {
-        console.log(current + ' comes --> ' + cnt + ' times');
-    }
-
-}
-
+  deleteUser() {
+    this.apiService.deleteUser(this.selectedUser._id).subscribe((data) => {
+      if (data) {
+        this.getUserList();
+        this.openDeletePopup = false;
+      }
+    })
+  }
 }
