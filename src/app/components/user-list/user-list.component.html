@@ -1,5 +1,11 @@
 <div class="userListMain">
     <h2>Dashboard</h2>
+    <div class="dashboardTabs">
+        <div class="totalEmp" routerLink="/addUser"><i class="bx bx-user-plus"></i> Add New Employees</div>
+        <div class="totalEmp" routerLink="/history"><i class="bx bx-share"></i>History</div>
+        <div class="totalEmp" routerLink="/department"><i class="bx bx-sitemap"></i>Departments</div>
+        <div class="totalEmp" routerLink="/registerDetails"><i class="bx bx-cog"></i>Settings</div>
+    </div>
     <div style="text-align: center;">
         <input type="search" class="inputSearch" placeholder="Search..." [(ngModel)]="searchText" id="">
     </div>

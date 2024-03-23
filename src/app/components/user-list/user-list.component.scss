@@ -13,6 +13,34 @@
         font-family: "Anta", sans-serif;
     }
 
+    .dashboardTabs{
+        display: flex;
+        gap: 2rem;
+        justify-content:center ;
+
+        .totalEmp{
+            height: 4.5rem;
+            width: fit-content;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-radius: 8px;
+            background-color: white;
+            align-items:center;
+            text-align: center;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0px 0px 35px -5px rgb(207, 207, 207);
+        }
+        .totalEmp:hover{
+            transition: 0.5s;
+            background-color: #469a7c;
+            color: white;
+            box-shadow: 0px 0px 15px -1px rgb(140, 140, 140);
+        }
+    }
+
     .inputSearch {
         height: 3rem;
         width: 100%;

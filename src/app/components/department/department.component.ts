@@ -19,6 +19,10 @@ export class DepartmentComponent implements OnInit {
   deptName : any;
   selectedUser: any;
   deleteUserName: any;
+  page: number = 1;
+  tableSize: number = 5;
+  count: number = 0;
+  tableSizes: any = [5, 10, 15, 20];
 
   constructor(private apiService: ApiService, private sharedService: SharedService) { }
 
@@ -54,6 +58,7 @@ export class DepartmentComponent implements OnInit {
         })
       })
     } else {
+      this.deptName = 'All';
       this.getUserList()
     }
   }
@@ -72,5 +77,16 @@ export class DepartmentComponent implements OnInit {
         this.openDeletePopup = false;
       }
     })
+  }
+
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getUserList();
+  }
+
+  onTableSizeChange(event: any) {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getUserList();
   }
 }

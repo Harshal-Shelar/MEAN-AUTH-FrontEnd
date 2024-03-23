@@ -13,31 +13,49 @@
     <div class="popup">
         <div class="content">
             <h4>Employees from <span style="color: #469a7c;">{{deptName}}</span>  department</h4>
-            <table class="popupTable">
-                <thead>
-                    <tr>
-                        <th class="popupTh">Name</th>
-                        <th class="popupTh">Email</th>
-                        <th class="popupTh">Employee Id</th>
-                        <th class="popupTh">Phone Number</th>
-                        <th class="popupTh">
-                            Actions
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of userList" style="padding: 1rem;">
-                        <td class="popupTd">{{item.name}}</td>
-                        <td class="popupTd">{{item.email}}</td>
-                        <td class="popupTd">{{item.empId}}</td>
-                        <td class="popupTd">{{item.phoneNumber}}</td>
-                        <td class="popupTd actionBtns">
-                            <button class="tablePopupEdit" [routerLink]="[ '/updateUser', item._id ]"> <i class="fa fa-paper-plane-o"></i> Edit</button>
-                            <button class="tablePopupDelete" (click)="selectUser(item)"> <i class="fa fa-trash-o"></i> Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tablePopup">
+                <table class="popupTable">
+                    <thead>
+                        <tr>
+                            <th class="popupTh">Name</th>
+                            <th class="popupTh">Email</th>
+                            <th class="popupTh">Employee Id</th>
+                            <th class="popupTh">Phone Number</th>
+                            <th class="popupTh">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbodyHeight">
+                        <tr *ngFor="let item of userList | paginate
+                        : {
+                            itemsPerPage: tableSize,
+                            currentPage: page,
+                            totalItems: count
+                          }" style="padding: 1rem;">
+                            <td class="popupTd">{{item.name}}</td>
+                            <td class="popupTd">{{item.email}}</td>
+                            <td class="popupTd">{{item.empId}}</td>
+                            <td class="popupTd">{{item.phoneNumber}}</td>
+                            <td class="popupTd actionBtns">
+                                <button class="tablePopupEdit" [routerLink]="[ '/updateUser', item._id ]"> <i class="fa fa-paper-plane-o"></i> Edit</button>
+                                <button class="tablePopupDelete" (click)="selectUser(item)"> <i class="fa fa-trash-o"></i> Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="paginationNum">
+                <pagination-controls class="paginationMain" previousLabel="Prev" nextLabel="Next"
+                    (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+                <div class="selectPage">
+                    <select (change)="onTableSizeChange($event)">
+                        <option *ngFor="let size of tableSizes">
+                            {{size}}
+                        </option>
+                    </select>
+                </div>
+            </div>
             <div class="popupBtns">
                 <button class="popupCancel" (click)="openPopup = false">Cancel</button>
             </div>

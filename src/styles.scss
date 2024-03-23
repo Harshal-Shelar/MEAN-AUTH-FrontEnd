@@ -18,6 +18,7 @@
         transition: all 5s ease-in-out;
         z-index: 999;
         opacity: 1;
+
         text-align: -webkit-center;
         background: rgb(255, 255, 255);
         border-radius: 16px;
@@ -51,71 +52,107 @@
                 }
             }
 
-            .popupTable {
-                overflow-y: auto;
-                width: 100%;
-                margin: 2rem 0;
-                letter-spacing: 0.5px;
+            .tablePopup {
+                max-height: 350px;
+                overflow: auto;
+                -webkit-box-shadow: 0 8px 6px -6px black;
+                -moz-box-shadow: 0 8px 6px -6px black;
+                box-shadow: 0 10px 15px -7px rgb(172, 172, 172);
 
-                thead {
-                    border-bottom: 1px solid gray;
+                .popupTable {
+                    overflow-y: auto;
+                    width: 100%;
+                    margin: 2rem 0 0;
+                    letter-spacing: 0.5px;
 
-                    tr {
-                        .popupTh {
-                            font-weight: 600;
-                            text-wrap: nowrap;
-                            padding-right: 1rem;
-                            font-size: 22px;
-                            padding-bottom: 0.5rem;
-                            padding-left: 0.5rem;
+                    thead {
+                        border-bottom: 1px solid gray;
+
+                        tr {
+                            .popupTh {
+                                font-weight: 600;
+                                text-wrap: nowrap;
+                                padding-right: 1rem;
+                                font-size: 19px;
+                                padding-bottom: 0.5rem;
+                                padding-left: 0.5rem;
+                            }
+                        }
+                    }
+
+                    .tbodyHeight {
+                        max-height: 200px;
+                        overflow: auto;
+
+                        tr {
+                            .popupTd {
+                                text-wrap: nowrap;
+                                font-weight: 500;
+                                font-size: 17px;
+                                padding: 0.5rem 1rem 0.5rem 0.5rem;
+                            }
+
+                            .actionBtns {
+                                display: flex;
+                                gap: 1rem;
+
+                                .tablePopupEdit,
+                                .tablePopupDelete {
+                                    display: flex;
+                                    gap: 0.5rem;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .tablePopupEdit {
+                                    color: green;
+                                }
+
+                                .tablePopupEdit:hover {
+                                    transition: 0.5s;
+                                    text-shadow: 0px 1px 5px green;
+                                }
+
+                                .tablePopupDelete {
+                                    color: red;
+                                }
+
+                                .tablePopupDelete:hover {
+                                    transition: 0.5s;
+                                    text-shadow: 0px 1px 5px red;
+                                }
+                            }
+                        }
+
+                        tr:nth-child(odd) {
+                            background-color: #efefef;
+                            color: #313131;
                         }
                     }
                 }
+            }
 
-                tbody {
-                    tr {
-                        .popupTd {
-                            text-wrap: nowrap;
-                            font-weight: 500;
-                            font-size: 20px;
-                            padding: 0.5rem 1rem 0.5rem 0.5rem;
-                        }
+            .paginationNum {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1rem;
 
-                        .actionBtns {
-                            display: flex;
-                            gap: 1rem;
+                .paginationMain {
+                    padding: 1rem 0rem 0;
+                    margin-left: 1rem;
+                    box-shadow: 0px 0px 15px 2px rgb(219, 219, 219);
+                }
 
-                            .tablePopupEdit,
-                            .tablePopupDelete {
-                                display: flex;
-                                gap: 0.5rem;
-                                justify-content: center;
-                                align-items: center;
-                            }
+                .selectPage {
+                    margin-right: 1rem;
 
-                            .tablePopupEdit {
-                                color: green;
-                            }
-
-                            .tablePopupEdit:hover {
-                                transition: 0.5s;
-                                text-shadow: 0px 1px 5px green;
-                            }
-
-                            .tablePopupDelete {
-                                color: red;
-                            }
-
-                            .tablePopupDelete:hover {
-                                transition: 0.5s;
-                                text-shadow: 0px 1px 5px red;
-                            }
-                        }
-                    }
-
-                    tr:nth-child(odd) {
-                        background-color: #efefef;
-                        color: #313131;
+                    select {
+                        width: 6rem;
+                        background: rgb(192, 192, 192);
+                        border-radius: 4px;
+                        padding: 5px 10px 5px 2px;
+                        font-size: 20px;
                     }
                 }
             }
