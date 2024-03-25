@@ -3,10 +3,9 @@ h2 {
     font-weight: bold;
     letter-spacing: 8px;
     text-align: left;
-    color: #469a7c;
+    color: #caa01f;
     margin: 1rem 0;
     font-family: "Anta", sans-serif;
-    // padding: 0 2rem;
 }
 .mainAddForm {
     width: 100%;
@@ -23,7 +22,7 @@ h2 {
         margin-right: 1rem;
 
         span {
-            color: #469a7c;
+            color: #415958;
             letter-spacing: 1px;
             font-size: 20px;
         }
@@ -49,7 +48,7 @@ h2 {
                     width: 100%;
                     letter-spacing: 1px;
                     border: 1px solid rgb(187, 187, 187);
-                    border-bottom: 2px solid #469a7c;
+                    border-bottom: 2px solid #415958;
                     border-radius: 0px;
                     border-top: 1px solid transparent;
                     border-right: 1px solid transparent;
@@ -58,7 +57,7 @@ h2 {
 
                 input:focus{
                     border: 1px solid transparent;
-                    border-bottom: 4px solid #469a7c;
+                    border-bottom: 4px solid #415958;
                     box-shadow: none;
                 }
     
@@ -109,7 +108,7 @@ h2 {
             }
 
             .updateBtn {
-                background-color: #469a7c;
+                background-color: #415958;
                 font-size: 18px;
                 padding: 0.5rem;
                 font-weight: 600;
@@ -122,8 +121,8 @@ h2 {
             .updateBtn:hover {
                 background-color: black;
                 transition: 0.5s;
-                color: #469a7c;
-                box-shadow: 0px 0px 10px 2px #469a7c;
+                color: #415958;
+                box-shadow: 0px 0px 10px 2px #415958;
             }
         }
     }

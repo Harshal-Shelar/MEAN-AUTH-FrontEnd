@@ -3,16 +3,15 @@ h2 {
     font-weight: bold;
     letter-spacing: 8px;
     text-align: left;
-    color: #469a7c;
+    color: #caa01f;
     margin: 1rem 0;
     font-family: "Anta", sans-serif;
-    // padding: 0 2rem;
 }
 .mainAddForm {
     width: 100%;
     background-color: #ffffff;
     border-radius: 16px;
-    box-shadow: 0px 0px 15px 2px rgb(197, 197, 197);
+    box-shadow: 0px 0px 35px 2px rgb(195, 195, 195);
     padding: 2rem;
 
     form {
@@ -35,14 +34,14 @@ h2 {
                     width: 100%;
                     letter-spacing: 1px;
                     border: 1px solid transparent;
-                    border-bottom: 2px solid #469a7c;
+                    border-bottom: 2px solid #415958;
                     border-radius: 0px;
                     width: 98%;
                 }
 
                 input:focus{
                     border: 1px solid transparent;
-                    border-bottom: 4px solid #469a7c;
+                    border-bottom: 4px solid #415958;
                     box-shadow: none;
                 }
     
@@ -76,7 +75,7 @@ h2 {
             }
 
             .submitBtn {
-                background-color: #469a7c;
+                background-color: #415958;
                 font-size: 18px;
                 padding: 0.7rem 0.5rem;
                 font-weight: 600;

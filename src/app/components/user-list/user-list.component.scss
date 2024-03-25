@@ -8,36 +8,52 @@
         font-weight: bold;
         letter-spacing: 8px;
         text-align: left;
-        color: #469a7c;
+        color: #caa01f;
         margin: 1rem 0;
         font-family: "Anta", sans-serif;
     }
 
-    .dashboardTabs{
+    .dashboardTabs {
         display: flex;
-        gap: 2rem;
-        justify-content:center ;
+        gap: 1rem;
+        justify-content: space-between;
+        margin-bottom: 1rem;
 
-        .totalEmp{
-            height: 4.5rem;
-            width: fit-content;
-            padding: 1rem 2rem;
+        .totalEmp {
+            height: 4rem;
+            width: 100%;
+            padding: 1rem 1rem;
             display: flex;
-            align-items: center;
             gap: 1rem;
+            justify-content: center;
+            align-items: center;
             border-radius: 8px;
-            background-color: white;
-            align-items:center;
+            background-color: #ffffff;
             text-align: center;
             letter-spacing: 1px;
+            font-size: 18px;
             cursor: pointer;
-            box-shadow: 0px 0px 35px -5px rgb(207, 207, 207);
+            -webkit-box-shadow: 0 10px 10px -10px #000000;
+            -moz-box-shadow: 0 10px 10px -10px #000000;
+            box-shadow: 0 35px 35px -25px #acacac;
         }
-        .totalEmp:hover{
+
+        .totalEmp:hover {
             transition: 0.5s;
-            background-color: #469a7c;
+            background-color: #415958;
             color: white;
             box-shadow: 0px 0px 15px -1px rgb(140, 140, 140);
+        }
+
+        .empTotal {
+            color: white;
+            box-shadow: 0px 0px 35px -5px rgb(177, 177, 177);
+            background-color: #caa01f;
+        }
+
+        .empTotal:hover {
+            transition: 0.7s;
+            background-image: linear-gradient(to right, #0e181e, #2F4858);
         }
     }
 
@@ -58,15 +74,16 @@
         outline: none;
         transition: 0.5s;
         border: 1px solid white;
-        box-shadow: 0px 0px 10px 1px #469a7c;
+        box-shadow: 0px 0px 10px 1px #415958;
     }
 
     .cardMain {
         display: inline-grid;
         border-radius: 15px;
-        width: 300px;
-        height: 300px;
-        margin: 1rem;
+        min-width: 300px;
+        max-width: fit-content;
+        height: 250px;
+        margin: 1rem 0.5rem;
         background-color: #ffffff;
         align-items: center;
         box-shadow: 0px 0px 35px -5px rgb(207, 207, 207);
@@ -74,15 +91,15 @@
         .cardHeading {
             text-align: center;
             font-size: 25px;
-            color: #469a7c;
+            color: #415958;
             margin: 0;
             letter-spacing: 2px;
             padding-top: 0;
+            align-items: center;
             border-bottom: 1px solid rgb(218, 218, 218);
-            padding-bottom: 1rem;
+            padding: 0.5rem;
             font-family: "Anta", sans-serif;
             text-shadow: none;
-            
         }
 
         h3 {
@@ -92,6 +109,7 @@
             align-items: center;
             letter-spacing: 1px;
             font-size: 16px;
+            text-wrap: nowrap;
 
             i {
                 font-size: 20px;
@@ -106,17 +124,16 @@
             gap: 1rem;
             padding: 0 1rem;
 
-            .deleteBtn{
+            .deleteBtn {
                 color: red;
             }
-            .editBtn{
+
+            .editBtn {
                 color: green;
             }
 
             .deleteBtn,
             .editBtn {
-                // background-color: transparent;
-                // color: white;
                 font-size: 18px;
                 padding: 0.2rem;
                 letter-spacing: 1px;
@@ -142,16 +159,25 @@
     }
 
     .cardMain:hover {
-        background-color: #469a7c;
+        background-color: #415958;
         box-shadow: none;
-        transition: 0.8s;
+        transition: 0.5s;
+        box-shadow: 0px 0px 35px -5px rgb(136, 136, 136);
 
-        .cardHeading{
+        .cardHeading {
             color: white;
         }
 
-        h3{
+        h3 {
             color: white;
+        }
+
+        .actionBtns {
+
+            .deleteBtn,
+            .editBtn {
+                color: white;
+            }
         }
 
     }
@@ -263,13 +289,13 @@
             .allRadio {
                 display: ruby;
 
-                select{
+                select {
                     height: 3rem;
                     font-size: 20px;
                     width: 15rem;
                     letter-spacing: 1px;
 
-                    option{
+                    option {
                         font-size: 14px;
                     }
                 }
@@ -342,14 +368,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(255, 204, 0);
+    background: #caa01f;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(179, 143, 0);
+    background: #6a5411;
 }
 
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:rgb(142, 142, 142);
+::-webkit-input-placeholder {
+    color: rgb(142, 142, 142);
 }

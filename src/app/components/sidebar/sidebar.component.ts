@@ -13,6 +13,7 @@ export class SidebarComponent implements OnInit {
   searchBtn : any;
   dataRecieve : any;
   openPopup : any;
+  isActiveProject: any;
 
   sidebarList = [
     {name : 'Dashboard', router : '/listUser', icons : 'bx bx-grid-alt'},
@@ -45,6 +46,10 @@ export class SidebarComponent implements OnInit {
         this.closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
       }
     }
+  }
+
+  activeProject() {
+    this.isActiveProject = true;
   }
 
   getData() {

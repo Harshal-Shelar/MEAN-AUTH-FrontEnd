@@ -1,30 +1,30 @@
-.deptMain{
+.deptMain {
     height: 100%;
     width: 100%;
     background-color: transparent;
     border-radius: 16px;
 
-    .headings{
+    .headings {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        h2{
+        h2 {
             font-size: 60px;
             font-weight: bold;
             letter-spacing: 8px;
             text-align: left;
-            color: #469a7c;
+            color: #caa01f;
             margin: 1rem 0;
             font-family: "Anta", sans-serif;
         }
-    
-        h3{
+
+        h3 {
             text-align: right;
         }
     }
 
-    .cardsMain{
+    .cardsMain {
         height: 10rem;
         width: 10rem;
         border-radius: 10px;
@@ -34,35 +34,56 @@
         align-items: center;
         padding: 0 1rem;
         margin: 1rem;
-        -webkit-box-shadow: 0 8px 6px -6px black;
-        -moz-box-shadow: 0 8px 6px -6px black;
-             box-shadow: 0 10px 15px -7px rgb(93, 93, 93);
+        -webkit-box-shadow: 0 10px 10px -10px #000000;
+        -moz-box-shadow: 0 10px 10px -10px #000000;
+        box-shadow: 0 35px 35px -25px #acacac;
 
-        .number{
+        .number {
             font-size: 60px;
             text-align: center;
             border-bottom: 1px solid rgb(181, 181, 181);
         }
 
-        .dept{
+        .dept {
             letter-spacing: 1px;
             text-align: center;
         }
     }
-    .cardsMain:hover{
+
+    .cardsMain:hover {
         transition: 0.5s;
-        background-color: #469a7c;
+        background-color: #caa01f;
         box-shadow: 0px 0px 15px 2px gray;
 
-        .number{
+        .number {
             color: white;
         }
-        .dept{
+
+        .dept {
             color: white;
         }
     }
 }
-
+@media (max-width : 938px) {
+    .deptMain{
+        .headings{
+            display: inline;
+            text-align: center;
+            h3{
+                text-align: center;
+            }
+        }
+    }
+}
+@media (max-width : 720px) {
+    .deptMain{
+        .headings{
+            h2{
+                font-size: 40px;
+            }
+        }
+    }
+}
 ::-webkit-scrollbar {
     width: 7px;
     padding-right: 5rem;
@@ -74,12 +95,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(255, 204, 0);
+    background: #caa01f;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(179, 143, 0);
+    background: #775e13;
 }
 
 ::-webkit-input-placeholder {

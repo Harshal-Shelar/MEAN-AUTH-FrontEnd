@@ -14,9 +14,9 @@ export class DepartmentComponent implements OnInit {
   deptList: any = [];
   totalEmp: any;
   duplicates: any = [];
-  openPopup : any;
-  openDeletePopup : any;
-  deptName : any;
+  openPopup: any;
+  openDeletePopup: any;
+  deptName: any;
   selectedUser: any;
   deleteUserName: any;
   page: number = 1;
@@ -28,7 +28,31 @@ export class DepartmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserList();
+    this.countO()
   }
+
+  countO() {
+
+    let current = null;
+    let cnt = 0;
+    for (let i = 0; i < this.userList.length; i++) {
+      if (this.userList[i] != current) {
+        if (cnt > 0) {
+          console.log(current + ' comes --> ' + cnt + ' times');
+        }
+        current = this.userList[i];
+        
+        cnt = 1;
+      } else {
+        cnt++;
+      }
+    }
+    if (cnt > 0) {
+      console.log(current + ' comes --> ' + cnt + ' times');
+    }
+
+  }
+
 
   getUserList() {
     this.apiService.getAllUsers().subscribe(async (data) => {
@@ -38,7 +62,7 @@ export class DepartmentComponent implements OnInit {
       this.userList.map((item: any) => {
         this.duplicates.push("All")
         this.duplicates.push(item.salary);
-
+        
         this.deptList = [...new Set(this.duplicates)];
       })
     })
@@ -52,6 +76,7 @@ export class DepartmentComponent implements OnInit {
         await data.map((item: any) => {
           if (item.salary === value) {
             this.dept.push(item);
+
             this.deptName = value;
             this.userList = this.dept;
           }
