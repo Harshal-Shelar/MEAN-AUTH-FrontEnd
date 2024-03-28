@@ -1,35 +1,38 @@
-<div class="sidebar" [ngClass]=" dataRecieve ? 'headerOpacity' : ''">
-    <div class="logo-details">
-        <i class="bx bxl-c-plus-plus icon"></i>
-        <div class="logo_name">M C L</div>
-        <i class="bx bx-menu" id="btn"></i>
-    </div>
-    <ul class="nav-list">
-        <li *ngFor="let item of sidebarList">
-            <a routerLink="{{item.router}}">
-                <i class="{{item.icons}}"></i>
-                <span class="links_name">{{item.name}}</span>
-            </a>
-            <span class="tooltip">{{item.name}}</span>
-        </li>
-        <li >
-            <a (click)="openPopupFun()">
-                <i class="bx bx-log-in-circle"></i>
-                <span class="links_name">Logout</span>
-            </a>
-            <span class="tooltip">Logout</span>
-        </li>
-        <li class="profile">
-            <div class="profile-details">
-                <div class="name_job">
-                    <div class="name">Harshal Shelar</div>
-                    <div class="job">MEAN / MERN Stack Developer</div>
+<div [ngClass]=" hideSidebar ? 'hideSidebarCss' : ''" *ngIf="hideSidebar">
+    <div class="sidebar" [ngClass]=" dataRecieve ? 'headerOpacity' : ''" >
+        <div class="logo-details">
+            <i class="bx bxl-c-plus-plus icon"></i>
+            <div class="logo_name">M C L</div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li *ngFor="let item of sidebarList">
+                <a routerLink="{{item.router}}">
+                    <i class="{{item.icons}}"></i>
+                    <span class="links_name">{{item.name}}</span>
+                </a>
+                <span class="tooltip">{{item.name}}</span>
+            </li>
+            <li >
+                <a (click)="openPopupFun()">
+                    <i class="bx bx-log-in-circle"></i>
+                    <span class="links_name">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <div class="name_job">
+                        <div class="name">Harshal Shelar</div>
+                        <div class="job">MEAN / MERN Stack Developer</div>
+                    </div>
                 </div>
-            </div>
-            <i class="bx bx-log-out" id="log_out"></i>
-        </li>
-    </ul>
+                <i class="bx bx-log-out" id="log_out"></i>
+            </li>
+        </ul>
+    </div>
 </div>
+
 <section class="home-section">
     <div class="text"><router-outlet></router-outlet></div>
 </section>

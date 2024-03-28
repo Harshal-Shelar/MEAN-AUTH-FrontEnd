@@ -28,41 +28,17 @@ export class DepartmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserList();
-    this.countO()
   }
-
-  countO() {
-
-    let current = null;
-    let cnt = 0;
-    for (let i = 0; i < this.userList.length; i++) {
-      if (this.userList[i] != current) {
-        if (cnt > 0) {
-          console.log(current + ' comes --> ' + cnt + ' times');
-        }
-        current = this.userList[i];
-        
-        cnt = 1;
-      } else {
-        cnt++;
-      }
-    }
-    if (cnt > 0) {
-      console.log(current + ' comes --> ' + cnt + ' times');
-    }
-
-  }
-
 
   getUserList() {
     this.apiService.getAllUsers().subscribe(async (data) => {
       this.userList = await data;
       this.totalEmp = data.length;
-
+      
       this.userList.map((item: any) => {
         this.duplicates.push("All")
         this.duplicates.push(item.salary);
-        
+
         this.deptList = [...new Set(this.duplicates)];
       })
     })

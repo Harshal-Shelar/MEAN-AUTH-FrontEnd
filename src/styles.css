@@ -15,7 +15,7 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #e4e9f7;
     /* background-image: linear-gradient(to bottom right, #f2f6f9 , #415958); */
     /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
 }
@@ -24,7 +24,9 @@ body {
     opacity: 0.6;
     cursor: not-allowed;
 }
-
+.text-red-500 {
+    font-size: 16px !important;
+}
 .textColor {
     color: rgb(128, 128, 128);
 }
@@ -165,7 +167,7 @@ input:checked+.slider:before {
 }
 .registerLinks {
     display: block !important;
-    color: white;
+    color: rgb(53, 53, 53);
     margin: 1rem 2rem;
     font-size: 20px;
 }
@@ -179,7 +181,6 @@ input:checked+.slider:before {
 }
 
 .registerLinks span a:hover {
-    color: white;
     transition: 0.5s;
     text-shadow: 0px 2px 10px rgba(37, 117, 252, 1);
 }

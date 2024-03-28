@@ -273,7 +273,11 @@
     margin: 18px;
     width: 95%;
 }
-
+.hideSidebarCss{
+    left: 0 !important;
+    width: 100% !important;
+    position: relative;
+}
 @media (max-width: 420px) {
     .sidebar li .tooltip {
         display: none;
