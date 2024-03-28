@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class SidebarComponent implements OnInit {
     {name : 'Settings', router : '/registerDetails', icons : 'bx bx-cog'}
   ]
 
-  constructor(private sharedService : SharedService) {}
+  constructor(private sharedService : SharedService, private router : Router) {}
   ngOnInit() {
 
     if(localStorage.getItem('user_id')){
@@ -69,7 +70,9 @@ export class SidebarComponent implements OnInit {
 
   logout(){
     localStorage.removeItem('user_id')
-    window.location.reload();
+    this.router.navigateByUrl('/login').then(() => {
+      window.location.reload();
+    });
   }
 
   closePopup(){

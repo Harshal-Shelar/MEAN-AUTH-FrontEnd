@@ -1,36 +1,34 @@
-<div [ngClass]=" hideSidebar ? 'hideSidebarCss' : ''" *ngIf="hideSidebar">
-    <div class="sidebar" [ngClass]=" dataRecieve ? 'headerOpacity' : ''" >
-        <div class="logo-details">
-            <i class="bx bxl-c-plus-plus icon"></i>
-            <div class="logo_name">M C L</div>
-            <i class="bx bx-menu" id="btn"></i>
-        </div>
-        <ul class="nav-list">
-            <li *ngFor="let item of sidebarList">
-                <a routerLink="{{item.router}}">
-                    <i class="{{item.icons}}"></i>
-                    <span class="links_name">{{item.name}}</span>
-                </a>
-                <span class="tooltip">{{item.name}}</span>
-            </li>
-            <li >
-                <a (click)="openPopupFun()">
-                    <i class="bx bx-log-in-circle"></i>
-                    <span class="links_name">Logout</span>
-                </a>
-                <span class="tooltip">Logout</span>
-            </li>
-            <li class="profile">
-                <div class="profile-details">
-                    <div class="name_job">
-                        <div class="name">Harshal Shelar</div>
-                        <div class="job">MEAN / MERN Stack Developer</div>
-                    </div>
-                </div>
-                <i class="bx bx-log-out" id="log_out"></i>
-            </li>
-        </ul>
+<div class="sidebar" *ngIf="hideSidebar" [ngClass]=" dataRecieve ? 'headerOpacity' : ''">
+    <div class="logo-details">
+        <i class="bx bxl-c-plus-plus icon"></i>
+        <div class="logo_name">M C L</div>
+        <i class="bx bx-menu" id="btn"></i>
     </div>
+    <ul class="nav-list">
+        <li *ngFor="let item of sidebarList">
+            <a routerLink="{{item.router}}">
+                <i class="{{item.icons}}"></i>
+                <span class="links_name">{{item.name}}</span>
+            </a>
+            <span class="tooltip">{{item.name}}</span>
+        </li>
+        <li>
+            <a (click)="openPopupFun()">
+                <i class="bx bx-log-in-circle"></i>
+                <span class="links_name">Logout</span>
+            </a>
+            <span class="tooltip">Logout</span>
+        </li>
+        <li class="profile">
+            <div class="profile-details">
+                <div class="name_job">
+                    <div class="name">Harshal Shelar</div>
+                    <div class="job">MEAN / MERN Stack Developer</div>
+                </div>
+            </div>
+            <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+    </ul>
 </div>
 
 <section class="home-section">
@@ -43,8 +41,7 @@
             <h4>Do you really want to <span>Logout</span> from this device ?</h4>
             <div class="popupBtns">
                 <button type="cancel" class="popupCancel" (click)="closePopup()">No</button>
-                <button type="button" class="popupDelete"
-                    (click)="logout()">Yes</button>
+                <button type="button" class="popupDelete" (click)="logout()">Yes</button>
             </div>
         </div>
     </div>

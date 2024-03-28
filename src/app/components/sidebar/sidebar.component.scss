@@ -257,7 +257,6 @@
     left: 78px;
     width: calc(100% - 78px);
     transition: all 0.5s ease;
-    z-index: 2;
 }
 
 .sidebar.open~.home-section {
@@ -283,13 +282,3 @@
         display: none;
     }
 }
-
-// @media (max-width : 720px) {
-//     .home-section{
-//         width: 100%;
-
-//         .text{
-//             margin: 0;
-//         }
-//     }
-// }
